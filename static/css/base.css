@@ -366,7 +366,7 @@ p {
     }
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 210px;
     }
 }
 @media (max-width: 768px) {
@@ -374,4 +374,14 @@ p {
         flex-direction: column; 
     }
 
+}
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 130px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
+    }
 }
