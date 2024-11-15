@@ -79,6 +79,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',# required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'bag.contexts.bag_contents',
             ],
         },
     },
@@ -167,6 +168,9 @@ CLOUDINARY_STORAGE = {
 # Use Cloudinary for media file storage
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
+
+FREE_DELIVERY_THRESHOLD = 100  
+STANDARD_DELIVERY_PERCENTAGE = 5 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
