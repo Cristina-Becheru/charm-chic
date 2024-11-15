@@ -9,6 +9,30 @@ def all_products(request):
     products = Product.objects.all()
     
     query = None
+    categories = None
+    subcategories = None
+    tags = None
+    sort_option = request.GET.get('sort', 'None_None')  
+    current_sorting = sort_option
+    
+      # Handles the category, subcategory, and tag filtering
+    if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+            
+        if 'subcategory' in request.GET:
+            subcategory_filter = request.GET['subcategory']
+            print(f"Filtering by subcategory: {subcategory_filter}")  # Debugging line
+            products = products.filter(subcategory__name=subcategory_filter)
+            subcategories = SubCategory.objects.filter(name=subcategory_filter)
+            
+        if 'tag' in request.GET:
+            tags = request.GET['tag'].split(',')
+            products = products.filter(tags__name__in=tags)
+            tags = Tag.objects.filter(name__in=tags) 
+                
     
      # Handles search query
     if request.GET:
@@ -24,6 +48,10 @@ def all_products(request):
     context = {
         'products': products,
         'search_term': query,
+        'current_categories': categories,
+        'current_subcategories': subcategories,
+        'current_tags': tags,
+        'current_sorting': current_sorting,
      }
     
     return render(request, 'products/products.html', context)

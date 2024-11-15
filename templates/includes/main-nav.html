@@ -21,16 +21,16 @@
                 </a>
                 <div class="dropdown-menu border-0" aria-labelledby="shop-link">
                     <h6 class="dropdown-header">Shop by Jewelry Type</h6>
-                    <a href="" class="dropdown-item">Necklace</a>
-                    <a href="" class="dropdown-item">Earrings</a>
-                    <a href="" class="dropdown-item">Bracelet</a>
-                    <a href="" class="dropdown-item">Ring</a>
+                    <a href="{% url 'products' %}?subcategory=Necklaces" class="dropdown-item">Necklace</a>
+                    <a href="{% url 'products' %}?subcategory=Earrings" class="dropdown-item">Earrings</a>
+                    <a href="{% url 'products' %}?subcategory=Bracelets" class="dropdown-item">Bracelet</a>
+                    <a href="{% url 'products' %}?subcategory=Rings" class="dropdown-item">Ring</a>
                     <div class="dropdown-divider"></div>
                     <h6 class="dropdown-header">Shop by Color</h6>
-                    <a href="" class="dropdown-item">White Pearls</a>
-                    <a href="" class="dropdown-item">Black Pearls</a>
-                    <a href="" class="dropdown-item">Pink Pearls</a>
-                    <a href="" class="dropdown-item">Golden Pearls</a>
+                    <a href="{% url 'products' %}?tag=White%20Pearls" class="dropdown-item">White Pearls</a>
+                    <a href="{% url 'products' %}?tag=Black%20Pearls" class="dropdown-item">Black Pearls</a>
+                    <a href="{% url 'products' %}?tag=Pink%20Pearls" class="dropdown-item">Pink Pearls</a>
+                    <a href="{% url 'products' %}?tag=Golden%20Pearls" class="dropdown-item">Golden Pearls</a>
                 </div>
             </li>
 
@@ -41,11 +41,10 @@
                     Trending
                 </a>
                 <div class="dropdown-menu border-0" aria-labelledby="trending-link">
-                    <a href="" class="dropdown-item">Best Sellers</a>
-                    <a href="" class="dropdown-item">New Arrivals</a>
+                    <a href="{% url 'products' %}?tag=Best%20Sellers" class="dropdown-item">Best Sellers</a>
+                    <a href="{% url 'products' %}?tag=New%20Arrivals" class="dropdown-item">New Arrivals</a>
                 </div>
             </li>
-
             <!-- About Link -->
             <li class="nav-item">
                 <a class="logo-font nav-link mr-4" href="{% url 'about' %}">
@@ -61,4 +60,5 @@
             </li>
         </ul>
     </div>
-</nav>
+    </nav> 
+   

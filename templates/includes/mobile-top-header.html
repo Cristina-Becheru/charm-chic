@@ -92,17 +92,25 @@
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
                 <ul class="dropdown-menu border-0" aria-labelledby="shop-subcategories">
                     <h6 class="dropdown-header">Shop by Jewelry Type</h6>
-                    <li><a href="" class="dropdown-item">Necklace</a></li>
-                    <li><a href="" class="dropdown-item">Earrings</a></li>
-                    <li><a href="" class="dropdown-item">Bracelet</a></li>
-                    <li><a href="" class="dropdown-item">Ring</a></li>
+                    <li><a href="{% url 'products' %}?subcategory=Necklaces" class="dropdown-item">Necklace</a></li>
+                    <li><a href="{% url 'products' %}?subcategory=Earrings" class="dropdown-item">Earrings</a></li>
+                    <li><a href="{% url 'products' %}?subcategory=Bracelets" class="dropdown-item">Bracelet</a></li>
+                    <li><a href="{% url 'products' %}?subcategory=Rings" class="dropdown-item">Ring</a></li>
                     <div class="dropdown-divider"></div>
                     <h6 class="dropdown-header">Shop by Color</h6>
-                    <li><a href="" class="dropdown-item">White Pearls</a></li>
-                    <li><a href="" class="dropdown-item">Black Pearls</a></li>
-                    <li><a href="" class="dropdown-item">Pink Pearls</a></li>
-                    <li><a href="" class="dropdown-item">Golden Pearls</a></li>
+                    <li><a href="{% url 'products' %}?tag=White%20Pearls" class="dropdown-item">White Pearls</a></li>
+                    <li><a href="{% url 'products' %}?tag=Black%20Pearls" class="dropdown-item">Black Pearls</a></li>
+                    <li><a href="{% url 'products' %}?tag=Pink%20Pearls" class="dropdown-item">Pink Pearls</a></li>
+                    <li><a href="{% url 'products' %}?tag=Golden%20Pearls" class="dropdown-item">Golden Pearls</a></li>
                 </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link text-dark text-uppercase dropdown-toggle" href="#" id="trending-link"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Trending</a>
+                <div class="dropdown-menu border-0" aria-labelledby="trending-link">
+                    <a href="{% url 'products' %}?tag=Best%20Sellers" class="dropdown-item">Best Sellers</a>
+                    <a href="{% url 'products' %}?tag=New%20Arrivals" class="dropdown-item">New Arrivals</a>
+                </div>
             </li>
             <li class="py-1"><a class="nav-link text-dark text-uppercase" href="">About</a></li>
             <li class="py-1"><a class="nav-link text-dark text-uppercase" href="">Contact</a></li>
