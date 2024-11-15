@@ -24,7 +24,6 @@ def all_products(request):
             
         if 'subcategory' in request.GET:
             subcategory_filter = request.GET['subcategory']
-            print(f"Filtering by subcategory: {subcategory_filter}")  # Debugging line
             products = products.filter(subcategory__name=subcategory_filter)
             subcategories = SubCategory.objects.filter(name=subcategory_filter)
             
@@ -44,7 +43,18 @@ def all_products(request):
             
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
-            
+    
+     # Sorting logic
+    if sort_option == 'price_asc':
+        products = products.order_by('price')
+    elif sort_option == 'price_desc':
+        products = products.order_by('-price')
+    elif sort_option == 'name_asc':
+        products = products.order_by('name')
+    elif sort_option == 'name_desc':
+        products = products.order_by('-name')
+        
+                
     context = {
         'products': products,
         'search_term': query,
