@@ -17,13 +17,15 @@
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="image-container my-5">
                 {% if product.image %}
-                    <a href="{{ product.image.url }}" target="_blank">
-                        <img class="card-img-top img-fluid mb-2" src="{{ product.image.url }}" alt="{{ product.name }} - Main Image">
-                    </a>
+                <a href="{{ product.image.url }}" target="_blank">
+                    <img class="card-img-top img-fluid mb-2" src="{{ product.image.url }}"
+                        alt="{{ product.name }} - Main Image">
+                </a>
                 {% else %}
-                    <a href="#">
-                        <img class="card-img-top img-fluid mb-2" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }} - Main Image">
-                    </a>
+                <a href="#">
+                    <img class="card-img-top img-fluid mb-2" src="{{ MEDIA_URL }}noimage.png"
+                        alt="{{ product.name }} - Main Image">
+                </a>
                 {% endif %}
             </div>
         </div>
@@ -33,51 +35,65 @@
                 <p class="mb-0 text-uppercase">{{ product.name }}</p>
                 <p class="lead mt-0">£{{ product.price }}</p>
                 {% if product.rating %}
-                    <p class="text-warning product-rating">
-                        {% for i in "12345" %}
-                            <i class="fas fa-star{% if i > product.rating|stringformat:"d" %}-o{% endif %}"></i>
-                        {% endfor %}
-                        <small class="text-muted">({{ product.rating }} / 5)</small>
-                    </p>
+                <p class="text-warning product-rating">
+                    {% for i in "12345" %}
+                    <i class="fas fa-star{% if i > product.rating|stringformat:" d" %}-o{% endif %}"></i>
+                    {% endfor %}
+                    <small class="text-muted">({{ product.rating }} / 5)</small>
+                </p>
                 {% else %}
-                    <p class="text-muted">No Rating</p>
+                <p class="text-muted">No Rating</p>
                 {% endif %}
                 {% if product.subcategory %}
-                    <p class="small mt-1 mb-0">
-                        <a class="text-muted" href="{% url 'products' %}?subcategory={{ product.subcategory.name }}">
-                            <i class="fas fa-tag mr-1"></i>{{ product.subcategory.friendly_name }}
-                        </a>
-                    </p>
+                <p class="small mt-1 mb-0">
+                    <a class="text-muted" href="{% url 'products' %}?subcategory={{ product.subcategory.name }}">
+                        <i class="fas fa-tag mr-1"></i>{{ product.subcategory.friendly_name }}
+                    </a>
+                </p>
                 {% endif %}
                 <hr class="my-2">
                 <p class="mt-2 text-uppercase">Product Description</p>
                 <p class="mb-2">{{ product.description }}</p>
-             <!-- Add to Bag Form -->
-             <form action="{% url 'add_to_bag' product.id %}" method="POST" class="mt-4">
-                {% csrf_token %}
-                <div class="form-group w-50">
-                    <label for="id_product_size" class="small font-weight-bold">{{ size_label }}</label>
-                    <select class="form-control rounded-0" name="product_size" id="id_product_size">
-                        {% for option in size_options %}
+                <!-- Add to Bag Form -->
+                <form action="{% url 'add_to_bag' product.id %}" method="POST" class="mt-4">
+                    {% csrf_token %}
+                    <div class="form-group w-50">
+                        <label for="id_product_size" class="small font-weight-bold">{{ size_label }}</label>
+                        <select class="form-control rounded-0" name="product_size" id="id_product_size">
+                            {% for option in size_options %}
                             <option value="{{ option }}">{{ option }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                
-                <div class="d-flex mt-3">
-                    <button type="submit" class="btn btn-dark btn-md mr-3">
-                        <i class="fas fa-shopping-basket"></i> Add to Bag
-                    </button>
-                    <a href="{% url 'products' %}" class="btn btn-secondary btn-md">
-                        <i class="fas fa-shopping-cart"></i> Keep Shopping
-                    </a>
-                </div>
-                
-                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-            </form>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group w-50">
+                        <label for="quantity" class="small font-weight-bold">Quantity</label>
+                        <div class="input-group">
+                            <button type="button" id="decrement-qty_{{ product.id }}" class="btn btn-dark decrement-qty"
+                                data-item_id="{{ product.id }}">-</button>
+                            <input type="number" name="quantity" id="id_qty_{{ product.id }}"
+                                class="form-control qty_input" value="1" min="1" max="99"
+                                data-item_id="{{ product.id }}">
+                            <button type="button" id="increment-qty_{{ product.id }}" class="btn btn-dark increment-qty"
+                                data-item_id="{{ product.id }}">+</button>
+                        </div>
+                    </div>
+
+                    <div class="d-flex mt-3">
+                        <button type="submit" class="btn btn-dark btn-md mr-3">
+                            <i class="fas fa-shopping-basket"></i> Add to Bag
+                        </button>
+                        <a href="{% url 'products' %}" class="btn btn-secondary btn-md">
+                            <i class="fas fa-shopping-cart"></i> Keep Shopping
+                        </a>
+                    </div>
+
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                </form>
+            </div>
         </div>
     </div>
 </div>
-</div>
 {% endblock %}
-
+{% block postloadjs %}
+{% include 'products/includes/quantity_input_script.html' %}
+{% endblock %}
