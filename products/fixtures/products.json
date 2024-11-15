@@ -1,0 +1,242 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "j001",
+            "name": "Classic White Pearl Stud Earrings",
+            "description": "Elegant and timeless stud earrings featuring high-quality white pearls, perfect for any occasion. These earrings add a refined touch to your everyday look or complement formal outfits.",
+            "price": 140.00,
+            "category": 4,
+            "subcategory": 6,
+            "image": "whiteeone.webp",
+            "rating": 4.8,
+            "tags": [9, 13]
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "sku": "j002",
+            "name": "Golden Pearl Bracelet",
+            "description": "Sophisticated golden pearl bracelet for a touch of luxury. The warm golden hue of the pearls adds elegance, making this bracelet ideal for both casual and formal wear. It’s a perfect gift for someone special or a luxurious treat for yourself.",
+            "price": 110.00,
+            "category": 3,
+            "subcategory": 7,
+            "image": "goldenbone.webp",
+            "rating": 4.7,
+            "tags": [12, 14]
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+            "sku": "j003",
+            "name": "Minimalist Pink Pearl Necklace",
+            "description": "Elegant single pink pearl necklace on a delicate chain, perfect for subtle elegance. The simplicity of this piece makes it a versatile addition to any jewelry collection, ideal for everyday wear.",
+            "price": 170.00,
+            "category": 3,
+            "subcategory": 5,
+            "image": "pinknthree.webp",
+            "rating": 4.7,
+            "tags": [11, 13]
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+            "sku": "j004",
+            "name": "Pink Pearl Layered Bracelet",
+            "description": "A layered bracelet featuring beautiful pink pearls. This bracelet combines elegance with a youthful vibe, making it perfect for casual wear or adding a pop of color to an evening outfit.",
+            "price": 130.00,
+            "category": 2,
+            "subcategory": 7,
+            "image": "pinkbtwo.webp",
+            "rating": 4.3,
+            "tags": [11, 13]
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+            "sku": "j005",
+            "name": "Pink Pearl Drop Earrings",
+            "description": "Elegant drop earrings with pink pearls, ideal for a pop of color. These earrings provide a sophisticated look that can complement both formal and casual outfits.",
+            "price": 120.00,
+            "category": 4,
+            "subcategory": 6,
+            "image": "pinkeone.webp",
+            "rating": 4.3,
+            "tags": [11, 13]
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+            "sku": "j006",
+            "name": "Classic Black Pearl Ring",
+            "description": "Stylish ring with a single black pearl centerpiece, set on a delicate band. This ring is perfect for those who appreciate understated elegance and want to add a subtle but impactful piece to their jewelry collection.",
+            "price": 105.00,
+            "category": 2,
+            "subcategory": 8,
+            "image": "blackrone.webp",
+            "rating": 4.8,
+            "tags": [10, 13]
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+            "sku": "j007",
+            "name": "Golden Pearl Diamond Accent Ring",
+            "description": "Elegant ring featuring a golden pearl with sparkling diamonds along the band, adding a touch of luxury and sophistication. This ring is perfect for special occasions or as a statement piece for any event.",
+            "price": 410.00,
+            "category": 2,
+            "subcategory": 8,
+            "image": "goldenrtwo.webp",
+            "rating": 4.8,
+            "tags": [12, 13]
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+            "sku": "j008",
+            "name": "Golden Pearl Necklace",
+            "description": "Elegant necklace featuring a full strand of golden pearls, ideal for formal occasions. This classic design adds an air of sophistication and grace, making it a perfect choice for a special event or evening out.",
+            "price": 220.00,
+            "category": 3,
+            "subcategory": 5,
+            "image": "goldnthree.webp",
+            "rating": 4.8,
+            "tags": [12, 13]
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+            "sku": "j009",
+            "name": "Black Pearl Strand Necklace",
+            "description": "Classic black pearl necklace, offering timeless elegance. Each pearl is carefully selected to create a harmonious strand that complements any neckline, making this necklace a must-have for formal and special occasions.",
+            "price": 275.00,
+            "category": 2,
+            "subcategory": 5,
+            "image": "blacknone.webp",
+            "rating": 4.9,
+            "tags": [10, 13]
+        }
+    },
+    {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+            "sku": "j010",
+            "name": "Golden Pearl Bracelet",
+            "description": "Sophisticated golden pearl bracelet for a touch of luxury. The warm golden hue of the pearls adds elegance, making this bracelet ideal for both casual and formal wear. It’s a perfect gift for someone special or a luxurious treat for yourself.",
+            "price": 110.00,
+            "category": 3,
+            "subcategory": 7,
+            "image": "goldenbone.webp",
+            "rating": 4.7,
+            "tags": [12, 14]
+        }
+    },
+    {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+            "sku": "j011",
+            "name": "Baroque Black Pearl Dangle Earrings",
+            "description": "Bold dangle earrings featuring striking baroque black pearls, adding an artisanal touch to any outfit. These earrings are perfect for those who want to make a statement with their accessories, combining elegance with a unique design.",
+            "price": 150.00,
+            "category": 3,
+            "subcategory": 6,
+            "image": "blacketwo.webp",
+            "rating": 4.8,
+            "tags": [10, 14]
+        }
+    },
+    {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+            "sku": "j012",
+            "name": "Pink Pearl Ring with Crystals",
+            "description": "A stunning ring featuring a lustrous pink pearl, accented with sparkling crystals. This ring is a statement piece, perfect for special occasions or for adding a touch of glamour to your everyday wear.",
+            "price": 150.00,
+            "category": 2,
+            "subcategory": 8,
+            "image": "pinkrtwo.webp",
+            "rating": 4.9,
+            "tags": [11, 13]
+        }
+    },
+    {
+        "pk": 13,
+        "model": "products.product",
+        "fields": {
+            "sku": "j013",
+            "name": "Triple-Strand White Pearl Bracelet",
+            "description": "Elegant triple-strand bracelet with lustrous white pearls and a secure clasp for added sophistication. This bracelet is perfect for adding a touch of elegance to formal occasions or special events.",
+            "price": 85.00,
+            "category": 2,
+            "subcategory": 7,
+            "image": "whitebthree.webp",
+            "rating": 4.4,
+            "tags": [9, 13]
+        }
+    },
+    {
+        "pk": 14,
+        "model": "products.product",
+        "fields": {
+            "sku": "j014",
+            "name": "White Pearl Necklace",
+            "description": "White pearl necklace for a classic and sophisticated look. This necklace is ideal for formal events or as an elegant addition to any outfit, offering timeless beauty and grace.",
+            "price": 200.00,
+            "category": 2,
+            "subcategory": 5,
+            "image": "whitenthree.webp",
+            "rating": 4.7,
+            "tags": [9, 13]
+        }
+    },
+    {
+        "pk": 15,
+        "model": "products.product",
+        "fields": {
+            "sku": "j015",
+            "name": "White Pearl Stud Earrings",
+            "description": "Elegant and timeless stud earrings featuring high-quality white pearls, perfect for any occasion. These earrings add a refined touch to your everyday look or complement formal outfits.",
+            "price": 140.00,
+            "category": 4,
+            "subcategory": 6,
+            "image": "whiteeone.webp",
+            "rating": 4.8,
+            "tags": [9, 13]
+        }
+    },
+    {
+        "pk": 16,
+        "model": "products.product",
+        "fields": {
+            "sku": "j016",
+            "name": "Pink Pearl Drop Earrings",
+            "description": "Elegant drop earrings with pink pearls, ideal for a pop of color.These earrings provide a sophisticated look that can complement both formal and casual outfits.",
+            "price": 120.00,
+            "category": 4,
+            "subcategory": 6,
+            "image": "pinkeone.webp",
+            "rating": 4.3,
+            "tags": [11, 13]
+        }
+    }
+]
