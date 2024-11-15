@@ -23,29 +23,11 @@
             {% endif %}
         </div>
     </div>
-    <!-- Product Count -->
-    <div class="row mb-4 align-items-center">
-        <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start my-auto">
-            <div class="product-info-container d-flex align-items-center mb-3">
-                <a href="{% url 'products' %}" class="logo-font rounded-pill px-2 py-2">
-                    <span>Products Home</span>
-                </a>
-                <span class="logo-font separator mx-2">|</span>
-                <span class="logo-font text-muted product-count px-3 py-2">{{ products|length }} Items Available</span>
-            </div>
-            {% if search_term %}
-            <div class="search-result mt-1 text-md-left text-center w-100">
-                <small>Results for: <strong>"{{ search_term }}"</strong></small>
-            </div>
-            {% endif %}
-        </div>
-        </div>
-        <!-- Product Grid -->
-         <!-- Consistent Product Grid -->
+<!-- Product Grid -->
 <div class="container">
     <div class="row justify-content-center">
         {% for product in products %}
-        <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-4 d-flex align-items-stretch">
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
             <div class="card border-0 shadow-sm text-center h-100">
                 <!-- Product Image -->
                 {% if product.image %}
@@ -57,6 +39,43 @@
                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                 </a>
                 {% endif %}
-                {% endfor %}
-                
+               <!-- Product Information -->
+               <div class="card-body p-3">
+                <h4 class="card-title mb-2">{{ product.name }}</h4>
+                <p class="card-text mb-2">£{{ product.price }}</p>
+                <!-- View Details Link -->
+                <a href=""
+                   class="category-link font-weight-bold small mt-2 d-inline-block">View Details</a>
+                   </div>
+            </div>
+        </div>
+          <!-- Add Dividers After Specific Number of Products -->
+          {% if forloop.counter|divisibleby:1 %}
+          <div class="col-12 d-sm-none mb-5">
+              <hr>
+          </div>
+      {% endif %}
+      {% if forloop.counter|divisibleby:2 %}
+          <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+              <hr>
+          </div>
+      {% endif %}
+      {% if forloop.counter|divisibleby:3 %}
+          <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+              <hr>
+          </div>
+      {% endif %}
+      {% if forloop.counter|divisibleby:4 %}
+          <div class="col-12 d-none d-xl-block mb-5">
+              <hr>
+          </div>
+      {% endif %}
+      
+  {% empty %}
+      <div class="col-12 text-center">
+          <p class="text-muted">No products found.</p>
+      </div>
+  {% endfor %}
+</div>
+</div>       
 {% endblock %}
