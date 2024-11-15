@@ -14,33 +14,34 @@
 {% endblock %}
 
 {% block content %}
-<div class="overlay"></div>
-<div class="container-fluid">
-    <div class="row my-2">
+<div class="container mb-5">
+    <div class="row">
         <div class="col">
             {% if bag_items %}
             <!-- Bag Items List -->
             {% for item in bag_items %}
             <div class="bg-white rounded shadow-sm p-3 mb-3">
                 <div class="row align-items-center">
-                     <!-- Product Info -->
-                     <div class="col-12 col-md-6 text-center mb-3">
+                    <!-- Product Info -->
+                    <div class="col-12 col-md-6 text-center mb-3">
                         <h6><strong>Product Info</strong></h6>
                         <div class="d-flex align-items-center">
-                            <div class="col-4"></div>
+                            <div class="col-4">
                                 {% if item.product.image %}
-                                    <img class="img-thumbnail img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                <img class="img-thumbnail img-fluid" src="{{ item.product.image.url }}"
+                                    alt="{{ item.product.name }}">
                                 {% else %}
-                                    <img class="img-thumbnail img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                <img class="img-thumbnail img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                                    alt="{{ item.product.name }}">
                                 {% endif %}
                             </div>
                             <div class="ms-3">
                                 <h6 class="mb-1">{{ item.product.name }}</h6>
                                 <div class="badge bg-info text-dark">
                                     {% if item.size %}
-                                        Size: {{ item.size|upper }}
+                                    Size: {{ item.size|upper }}
                                     {% else %}
-                                        No Size Selected
+                                    No Size Selected
                                     {% endif %}
                                 </div>
                                 <div class="small text-muted">SKU: {{ item.product.sku|upper }}</div>
@@ -51,22 +52,31 @@
                     <div class="quantity-control">
                         <h6 class="fw-bold">Quantity</h6>
                         <div class="input-group mb-2">
-                            <button class="btn btn-outline-dark decrement-qty" data-item-id="{{ item.item_id }}" onclick="updateQuantity('{{ item.item_id }}', -1)">-</button>
-                            <input id="qty_{{ item.item_id }}" type="number" class="form-control text-center" value="{{ item.quantity }}" min="1" max="99" readonly>
-                            <button class="btn btn-outline-dark increment-qty" data-item-id="{{ item.item_id }}" onclick="updateQuantity('{{ item.item_id }}', 1)">+</button>
+                            <button class="btn btn-outline-dark decrement-qty" data-item-id="{{ item.item_id }}"
+                                onclick="updateQuantity('{{ item.item_id }}', -1)">-</button>
+                            <input id="qty_{{ item.item_id }}" type="number" class="form-control text-center"
+                                value="{{ item.quantity }}" min="1" max="99" readonly>
+                            <button class="btn btn-outline-dark increment-qty" data-item-id="{{ item.item_id }}"
+                                onclick="updateQuantity('{{ item.item_id }}', 1)">+</button>
                         </div>
 
                         <div class="action-buttons d-flex justify-content-between">
-                            <form method="POST" action="" class="me-2" onsubmit="handleUpdate(event, '{{ item.item_id }}')">
+                            <form method="POST" action="{% url 'update_item' item.item_id %}" class="me-2"
+                                onsubmit="handleUpdate(event, '{{ item.item_id }}')">
                                 {% csrf_token %}
-                                <input type="hidden" name="quantity" id="update_quantity_{{ item.item_id }}" value="{{ item.quantity }}">
+                                <input type="hidden" name="quantity" id="update_quantity_{{ item.item_id }}"
+                                    value="{{ item.quantity }}">
                                 <input type="hidden" name="product_size" value="{{ item.size }}">
-                                <button type="submit" class="btn btn-link text-decoration-none text-info update-item"><small>Update</small></button>
+                                <button type="submit"
+                                    class="btn btn-link text-decoration-none text-info update-item"><small>Update</small></button>
                             </form>
 
-                            <form method="POST" action="" onsubmit="return handleRemove(event, '{{ item.item_id }}')">
+                            <form method="POST" action="{% url 'remove_item' item.item_id %}"
+                                onsubmit="return handleRemove(event, '{{ item.item_id }}')">
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-link text-decoration-none text-danger remove-item" data-size="{{ item.size }}" id="remove_{{ item.item_id }}"><small>Remove</small></button>
+                                <button type="submit" class="btn btn-link text-decoration-none text-danger remove-item"
+                                    data-size="{{ item.size }}"
+                                    id="remove_{{ item.item_id }}"><small>Remove</small></button>
                             </form>
                         </div>
                     </div>
@@ -93,7 +103,8 @@
                     <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
                     <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
                     {% if free_delivery_delta > 0 %}
-                        <p class="mb-1 text-danger">Spend <strong>£{{ free_delivery_delta|floatformat:2 }}</strong> more to qualify for free delivery!</p>
+                    <p class="mb-1 text-danger">Spend <strong>£{{ free_delivery_delta|floatformat:2 }}</strong> more to
+                        qualify for free delivery!</p>
                     {% endif %}
                 </div>
             </div>
@@ -122,7 +133,7 @@
 
 {% block postloadjs %}
 {% include 'products/includes/quantity_input_script.html' %}
-                
+
 <script>
     function updateQuantity(itemId, change) {
         const input = document.getElementById(`qty_${itemId}`);
@@ -143,4 +154,3 @@
     }
 </script>
 {% endblock %}
-

@@ -45,3 +45,56 @@ def add_to_bag(request, item_id):
 
     request.session['bag'] = bag
     return redirect(redirect_url)
+
+
+def update_item(request, item_id):
+    """ Update the quantity of a specific item in the shopping bag """
+    if request.method == 'POST':
+        bag = request.session.get('bag', {})
+        size = request.POST.get('product_size', None)
+
+        if item_id in bag:
+            new_quantity = request.POST.get('quantity')
+            if new_quantity and new_quantity.isdigit() and int(new_quantity) > 0:
+                if size and size in bag[item_id]:
+                    bag[item_id][size] = int(new_quantity)
+                    messages.success(request, 'Item updated successfully!')
+                elif not size:
+                    bag[item_id] = int(new_quantity)
+                    messages.success(request, 'Item updated successfully!')
+                else:
+                    messages.error(request, 'Invalid size provided.')
+            else:
+                messages.error(request, 'Invalid quantity provided.')
+        else:
+            messages.error(request, 'Item not found in the bag.')
+
+        request.session['bag'] = bag
+        return redirect('view_bag')
+    else:
+        messages.error(request, 'Invalid request method.')
+        return redirect('view_bag')
+
+def remove_item(request, item_id):
+    """ Remove a specific item from the shopping bag """
+    if request.method == 'POST':
+        bag = request.session.get('bag', {})
+        size = request.POST.get('product_size', None)
+
+        if item_id in bag:
+            if size and size in bag[item_id]:
+                del bag[item_id][size]
+                if not bag[item_id]:  # Remove the item if no sizes are left
+                    del bag[item_id]
+                messages.success(request, 'Item removed successfully!')
+            else:
+                del bag[item_id]
+                messages.success(request, 'Item removed successfully!')
+        else:
+            messages.error(request, 'Item not found in the bag.')
+
+        request.session['bag'] = bag
+        return redirect('view_bag')
+    else:
+        messages.error(request, 'Invalid request method.')
+        return redirect('view_bag')
