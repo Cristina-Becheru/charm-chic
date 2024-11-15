@@ -65,7 +65,7 @@
                 <!-- Shopping Bag Icon -->
                 <li class="list-inline-item">
                     <a class="d-lg-none {% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %}"
-                        href="" aria-label="grand total and link to shopping bag">
+                        href="{% url 'view_bag' %}" aria-label="grand total and link to shopping bag">
                         <p class="my-0 text-dark">
                             <i class="fas fa-shopping-basket"></i>
                             {% if grand_total %}
