@@ -134,4 +134,50 @@
     <p class="text-muted">No products found.</p>
 </div>
 {% endif %}
+<!-- Back to Top Button -->
+<div class="btt-button">
+    <a href="#" class="btt-link d-flex h-100" aria-label="back to top button">
+        <i class="fas fa-arrow-up mx-auto my-auto"></i>
+    </a>
+</div>
+
+<!-- JavaScript for Sort Selector -->
+<script>
+    document.getElementById('sort-selector').addEventListener('change', function () {
+        const selectedOption = this.value;
+        const currentUrl = new URL(window.location);
+
+        if (selectedOption === 'reset') {
+            currentUrl.searchParams.delete('sort');
+        } else {
+            currentUrl.searchParams.set('sort', selectedOption);
+        }
+
+        window.location.href = currentUrl.toString();
+    });
+</script>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+    // Show back-to-top button on scroll
+    window.addEventListener('scroll', function () {
+        const bttButton = document.querySelector('.btt-button');
+        if (window.scrollY > 300) {
+            bttButton.style.display = 'block';
+        } else {
+            bttButton.style.display = 'none';
+        }
+    });
+
+    // Scroll to top when button is clicked
+    document.querySelector('.btt-link').addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
 {% endblock %}
