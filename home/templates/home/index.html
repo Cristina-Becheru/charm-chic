@@ -10,9 +10,15 @@
 {% endblock %}
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-7 col-md-6 my-auto">
+<header class="header-section">
+    <div class="video-background">
+        <video autoplay muted loop class="w-100">
+            <source src="{% static 'video/background.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="overlay-content d-flex align-items-center justify-content-center text-light">
+        <div class="text-center px-3">
             <h2 class="fw-bold logo-font mb-4">
                 Discover the Beauty of Timeless Elegance
             </h2>
@@ -25,4 +31,147 @@
     </div>
 </div>
 </div>
+</header>
+<!-- Collection Section Below Video -->
+<section class="collection-section py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <!-- Left Image -->
+            <div class="col-12 col-md-4 mb-4 mb-md-0">
+                <img src="" alt="Left Image" class="img-fluid rounded shadow">
+            </div>
+
+            <!-- Highlights in the Middle -->
+            <div class="col-12 col-md-4 d-flex flex-column justify-content-center">
+                <div class="highlight-box p-3 bg-white shadow rounded">
+                    <h4 class="logo-font text-dark text-center">Experience Elegance Redefined</h4>
+                    <p class="text-center">Dive into our curated selection of timeless pearls and sophisticated jewelry
+                        pieces that enhance any look. Each item is designed to add a touch of grace and refinement to
+                        your style.</p>
+                    <div class="mt-4">
+                        <a href=""
+                            class="shop-now-button btn btn-md btn-outline-light rounded-pill text-uppercase py-2 px-4">Explore the
+                            Collection</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Image -->
+            <div class="col-12 col-md-4">
+                <img src="" alt="Right Image" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Shop by Category Section -->
+<div class="pearl-bg-wrapper">
+    <div class="pearl-bg">
+        <div class="container my-5 p-4">
+            <div class="row text-center">
+                <div class="col">
+                    <h2 class="logo-font">Categories Jewelry</h2>
+                    <p>Choose from our exquisite range of necklaces, earrings, bracelets, and rings.</p>
+                </div>
+            </div>
+
+            <!-- Four Images in a Grid with Category Names -->
+            <div class="row text-center my-3">
+                <!-- Necklaces -->
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4">
+                    <div class="image-hover position-relative">
+                        <img src="" alt="Necklaces" class="img-fluid default-img">
+                        <img src="" alt="Necklaces Hover"
+                            class="img-fluid hover-img">
+                        <h5 class="category-title">
+                            <a href="" class="category-link">Necklaces</a>
+                        </h5>
+                    </div>
+                </div>
+
+                <!-- Earrings -->
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4">
+                    <div class="image-hover position-relative">
+                        <img src="" alt="Earrings" class="img-fluid default-img">
+                        <img src="" alt="Earrings Hover"
+                            class="img-fluid hover-img">
+                        <h5 class="category-title">
+                            <a href="" class="category-link">Earrings</a>
+                        </h5>
+                    </div>
+                </div>
+
+                <!-- Bracelets -->
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4">
+                    <div class="image-hover position-relative">
+                        <img src="" alt="Bracelets"
+                            class="img-fluid default-img">
+                        <img src="" alt="Bracelets Hover" class="img-fluid hover-img">
+                        <h5 class="category-title">
+                            <a href="" class="category-link">Bracelets</a>
+                        </h5>
+                    </div>
+                </div>
+
+                <!-- Rings -->
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4">
+                    <div class="image-hover position-relative">
+                        <img src="" alt="Rings" class="img-fluid default-img">
+                        <img src="" alt="Rings Hover" class="img-fluid hover-img">
+                        <h5 class="category-title">
+                            <a href="" class="category-link">Rings</a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="service grid my-3">
+            <h2 class="services-title text-center">Our Services</h2>
+            <p class="text-center mb-4">We pride ourselves on delivering a premier experience, ensuring that every
+                aspect of your journey with us is exceptional.</p>
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-12 col-lg-3 mb-4">
+                        <div class="service-card p-4 border rounded shadow-sm">
+                            <div class="service-icon mb-3 text-center">
+                                <i class="fas fa-shipping-fast"></i> <!-- Font Awesome Delivery Icon -->
+                            </div>
+                            <h4 class="service-heading">Free Delivery on Any Order</h4>
+                            <p>Treat yourself or your loved ones today. Experience the luxury with our natural pearls
+                                and benefit from free delivery.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-3 mb-4">
+                        <div class="service-card p-4 border rounded shadow-sm">
+                            <div class="service-icon mb-3 text-center">
+                                <i class="fas fa-spray-can"></i> <!-- Font Awesome Cleaning Icon -->
+                            </div>
+                            <h4 class="service-heading">Cleaning & Maintenance</h4>
+                            <p>CharmChic offers cleaning services for our jewelry. For details, please contact us.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-3 mb-4">
+                        <div class="service-card p-4 border rounded shadow-sm">
+                            <div class="service-icon mb-3 text-center">
+                                <i class="fas fa-gift"></i> <!-- Font Awesome Gift Icon -->
+                            </div>
+                            <h4 class="service-heading">Free Gift Wrapping</h4>
+                            <p>In addition to the perfect elegance of CharmChic creations, the unique design of our
+                                jewelry box adds an additional touch of luxury.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-3 mb-4">
+                        <div class="service-card p-4 border rounded shadow-sm">
+                            <div class="service-icon mb-3 text-center">
+                                <i class="fas fa-star"></i> <!-- Font Awesome Unique Icon -->
+                            </div>
+                            <h4 class="service-heading">100% Unique Products</h4>
+                            <p>Each piece of jewelry we create is unique and handcrafted, with care and attention to
+                                detail, to guarantee the quality and originality of each piece.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 {% endblock %}
