@@ -10,6 +10,7 @@
             "category": 4,
             "subcategory": 6,
             "image": "whiteeone.jpg",
+            "image_url": "https://res.cloudinary.com/df3c4vqsq/image/upload/v1/media/whiteeone_mfrivw",
             "rating": 4.8,
             "tags": [9, 13]
         }
@@ -25,6 +26,7 @@
             "category": 3,
             "subcategory": 7,
             "image": "goldenbone.jpg",
+            "image_url": "https://res.cloudinary.com/df3c4vqsq/image/upload/v1/media/goldenbone_wasq7s",
             "rating": 4.7,
             "tags": [12, 14]
         }
@@ -40,6 +42,7 @@
             "category": 3,
             "subcategory": 5,
             "image": "pinknthree.jpg",
+            "image_url": "https://res.cloudinary.com/df3c4vqsq/image/upload/v1/media/pinknthree_ikgrh2",
             "rating": 4.7,
             "tags": [11, 13]
         }
@@ -55,6 +58,7 @@
             "category": 2,
             "subcategory": 7,
             "image": "pinkbtwo.jpg",
+            "image_url": "https://res.cloudinary.com/df3c4vqsq/image/upload/v1/media/pinkbtwo_hsdjd3",
             "rating": 4.3,
             "tags": [11, 13]
         }
@@ -70,6 +74,7 @@
             "category": 4,
             "subcategory": 6,
             "image": "pinkeone.jpg",
+            "image_url": "https://res.cloudinary.com/df3c4vqsq/image/upload/v1/media/pinkeone_gi5ftc",
             "rating": 4.3,
             "tags": [11, 13]
         }
@@ -85,6 +90,7 @@
             "category": 2,
             "subcategory": 8,
             "image": "blackrone.jpg",
+            "image_url": "https://res.cloudinary.com/df3c4vqsq/image/upload/v1/media/blackrone_w2y5pn",
             "rating": 4.8,
             "tags": [10, 13]
         }
@@ -100,6 +106,7 @@
             "category": 2,
             "subcategory": 8,
             "image": "goldenrtwo.jpg",
+            "image_url": "https://res.cloudinary.com/df3c4vqsq/image/upload/v1/media/goldenrtwo_ay87ov",
             "rating": 4.8,
             "tags": [12, 13]
         }
@@ -115,6 +122,7 @@
             "category": 3,
             "subcategory": 5,
             "image": "goldnthree.jpg",
+            "image_url": "https://res.cloudinary.com/df3c4vqsq/image/upload/v1/media/goldnthree_oauk2v",
             "rating": 4.8,
             "tags": [12, 13]
         }
@@ -130,6 +138,7 @@
             "category": 2,
             "subcategory": 5,
             "image": "blacknone.jpg",
+            "image_url": "https://res.cloudinary.com/df3c4vqsq/image/upload/v1/media/blacknone_iew5iy",
             "rating": 4.9,
             "tags": [10, 13]
         }
@@ -145,6 +154,7 @@
             "category": 3,
             "subcategory": 7,
             "image": "goldenbone.jpg",
+            "image_url": "https://res.cloudinary.com/df3c4vqsq/image/upload/v1/media/goldenbone_fcjqwi",
             "rating": 4.7,
             "tags": [12, 14]
         }
@@ -160,6 +170,7 @@
             "category": 3,
             "subcategory": 6,
             "image": "blacketwo.jpg",
+            "image_url": "https://res.cloudinary.com/df3c4vqsq/image/upload/v1/media/blacketwo_tyzhxk",
             "rating": 4.8,
             "tags": [10, 14]
         }
@@ -175,6 +186,7 @@
             "category": 2,
             "subcategory": 8,
             "image": "pinkrtwo.jpg",
+            "image_url": "https://res.cloudinary.com/df3c4vqsq/image/upload/v1/media/pinkrtwo_jogrx0",
             "rating": 4.9,
             "tags": [11, 13]
         }
@@ -190,6 +202,7 @@
             "category": 2,
             "subcategory": 7,
             "image": "whitebthree.jpg",
+            "image_url": "https://res.cloudinary.com/df3c4vqsq/image/upload/v1/media/whitebthree_yz23ll",
             "rating": 4.4,
             "tags": [9, 13]
         }
@@ -205,38 +218,42 @@
             "category": 2,
             "subcategory": 5,
             "image": "whitenthree.jpg",
+            "image_url": "https://res.cloudinary.com/df3c4vqsq/image/upload/v1/media/whitenthree_c5idwh",
             "rating": 4.7,
             "tags": [9, 13]
         }
     },
-    {
-        "pk": 15,
-        "model": "products.product",
-        "fields": {
-            "sku": "j015",
-            "name": "White Pearl Stud Earrings",
-            "description": "Elegant and timeless stud earrings featuring high-quality white pearls, perfect for any occasion. These earrings add a refined touch to your everyday look or complement formal outfits.",
-            "price": 140.00,
-            "category": 4,
-            "subcategory": 6,
-            "image": "whiteeone.jpg",
-            "rating": 4.8,
-            "tags": [9, 13]
+        {
+            "pk": 15,
+            "model": "products.product",
+            "fields": {
+                "sku": "j015",
+                "name": "White Double Pearl Ring",
+                "description": "Minimalist ring featuring two elegant white pearls for a modern and sophisticated look. This timeless design pairs simplicity with grace, making it a versatile piece that complements any outfit. Whether for casual wear or a more formal occasion, this ring offers understated luxury and is a perfect addition to any jewelry collection.",
+                "price": 175.00,
+                "category": 2,
+                "subcategory": 8,
+                "image": "whitertwo.jpg",
+                "image_url": "https://res.cloudinary.com/df3c4vqsq/image/upload/v1/media/whitertwo_vibhlc",
+                "rating": 4.8,
+                "tags": [9, 13]
+            }
+        },
+        {
+            "pk": 16,
+            "model": "products.product",
+            "fields": {
+                "sku": "j014",
+                "name": "Golden Pearl Drop Earrings",
+                "description": "Elegant drop earrings featuring beautiful golden pearls. These earrings are perfect for adding a touch of sophistication to any outfit, whether for formal events or casual wear. The warm golden hues of the pearls give them a timeless and luxurious look, making them a versatile addition to your jewelry collection.",
+                "price": 80.00,
+                "category": 4,
+                "subcategory": 6,
+                "image": "goldenetwo.jpg",
+                "image_url": "https://res.cloudinary.com/df3c4vqsq/image/upload/v1/media/goldenetwo_rhhfla",
+                "rating": 4.7,
+                "tags": [12, 13]
+            }
         }
-    },
-    {
-        "pk": 16,
-        "model": "products.product",
-        "fields": {
-            "sku": "j016",
-            "name": "Pink Pearl Drop Earrings",
-            "description": "Elegant drop earrings with pink pearls, ideal for a pop of color.These earrings provide a sophisticated look that can complement both formal and casual outfits.",
-            "price": 120.00,
-            "category": 4,
-            "subcategory": 6,
-            "image": "pinkeone.jpg",
-            "rating": 4.3,
-            "tags": [11, 13]
-        }
-    }
 ]
+
