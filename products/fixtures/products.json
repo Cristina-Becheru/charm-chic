@@ -9,7 +9,7 @@
             "price": 140.00,
             "category": 4,
             "subcategory": 6,
-            "image": "whiteeone.webp",
+            "image": "whiteeone.jpg",
             "rating": 4.8,
             "tags": [9, 13]
         }
@@ -24,7 +24,7 @@
             "price": 110.00,
             "category": 3,
             "subcategory": 7,
-            "image": "goldenbone.webp",
+            "image": "goldenbone.jpg",
             "rating": 4.7,
             "tags": [12, 14]
         }
@@ -39,7 +39,7 @@
             "price": 170.00,
             "category": 3,
             "subcategory": 5,
-            "image": "pinknthree.webp",
+            "image": "pinknthree.jpg",
             "rating": 4.7,
             "tags": [11, 13]
         }
@@ -54,7 +54,7 @@
             "price": 130.00,
             "category": 2,
             "subcategory": 7,
-            "image": "pinkbtwo.webp",
+            "image": "pinkbtwo.jpg",
             "rating": 4.3,
             "tags": [11, 13]
         }
@@ -69,7 +69,7 @@
             "price": 120.00,
             "category": 4,
             "subcategory": 6,
-            "image": "pinkeone.webp",
+            "image": "pinkeone.jpg",
             "rating": 4.3,
             "tags": [11, 13]
         }
@@ -84,7 +84,7 @@
             "price": 105.00,
             "category": 2,
             "subcategory": 8,
-            "image": "blackrone.webp",
+            "image": "blackrone.jpg",
             "rating": 4.8,
             "tags": [10, 13]
         }
@@ -99,7 +99,7 @@
             "price": 410.00,
             "category": 2,
             "subcategory": 8,
-            "image": "goldenrtwo.webp",
+            "image": "goldenrtwo.jpg",
             "rating": 4.8,
             "tags": [12, 13]
         }
@@ -114,7 +114,7 @@
             "price": 220.00,
             "category": 3,
             "subcategory": 5,
-            "image": "goldnthree.webp",
+            "image": "goldnthree.jpg",
             "rating": 4.8,
             "tags": [12, 13]
         }
@@ -129,7 +129,7 @@
             "price": 275.00,
             "category": 2,
             "subcategory": 5,
-            "image": "blacknone.webp",
+            "image": "blacknone.jpg",
             "rating": 4.9,
             "tags": [10, 13]
         }
@@ -144,7 +144,7 @@
             "price": 110.00,
             "category": 3,
             "subcategory": 7,
-            "image": "goldenbone.webp",
+            "image": "goldenbone.jpg",
             "rating": 4.7,
             "tags": [12, 14]
         }
@@ -159,7 +159,7 @@
             "price": 150.00,
             "category": 3,
             "subcategory": 6,
-            "image": "blacketwo.webp",
+            "image": "blacketwo.jpg",
             "rating": 4.8,
             "tags": [10, 14]
         }
@@ -174,7 +174,7 @@
             "price": 150.00,
             "category": 2,
             "subcategory": 8,
-            "image": "pinkrtwo.webp",
+            "image": "pinkrtwo.jpg",
             "rating": 4.9,
             "tags": [11, 13]
         }
@@ -189,7 +189,7 @@
             "price": 85.00,
             "category": 2,
             "subcategory": 7,
-            "image": "whitebthree.webp",
+            "image": "whitebthree.jpg",
             "rating": 4.4,
             "tags": [9, 13]
         }
@@ -204,7 +204,7 @@
             "price": 200.00,
             "category": 2,
             "subcategory": 5,
-            "image": "whitenthree.webp",
+            "image": "whitenthree.jpg",
             "rating": 4.7,
             "tags": [9, 13]
         }
@@ -219,7 +219,7 @@
             "price": 140.00,
             "category": 4,
             "subcategory": 6,
-            "image": "whiteeone.webp",
+            "image": "whiteeone.jpg",
             "rating": 4.8,
             "tags": [9, 13]
         }
@@ -234,7 +234,7 @@
             "price": 120.00,
             "category": 4,
             "subcategory": 6,
-            "image": "pinkeone.webp",
+            "image": "pinkeone.jpg",
             "rating": 4.3,
             "tags": [11, 13]
         }
