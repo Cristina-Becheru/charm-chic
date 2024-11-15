@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <hr>
+            <h4 class="logo-font pt-4">Welcome to CharmChic</h4>
+            <hr>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-4 text-center ms-4 mb-4">
+            <img src="{% static 'images/aboutus.webp' %}" class="img-fluid responsive-image"
+                alt="Illustration of pearls and craftsmanship">
+
+        </div>
