@@ -119,6 +119,24 @@ p {
 #delivery-banner {
     background:#D3D8DC;
 }
+
+/*  bootstrap toasts */
+
+.message-container {
+  position: fixed;
+  top: 72px;
+  right: 15px;
+  z-index: 99999999999;
+}
+
+.custom-toast {
+  overflow: visible;
+}
+
+.toast-capper {
+  height: 1px;
+}
+
 /* Image Styles */
 .row img {
     max-width: 100%; 
