@@ -119,7 +119,16 @@ p {
 #delivery-banner {
     background:#D3D8DC;
 }
+/* Image Styles */
+.row img {
+    max-width: 100%; 
+    border-radius: 10px; 
+    transition: transform 0.3s ease; 
+}
 
+.row img:hover {
+    transform: scale(1.05); 
+}
 /* Overall Section Background Color for Pearls */
 .pearl-bg-wrapper {
     background-color: #f9f8f4; 
