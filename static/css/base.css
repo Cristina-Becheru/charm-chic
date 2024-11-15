@@ -266,6 +266,78 @@ p {
     color: #36454F; 
     margin-bottom: 15px; 
 }
+
+/* Footer */
+.custom-bg-wrapper {
+    background-color: #D3D8DC;
+    padding: 20px 0; /* Increased padding for more height */
+}
+
+.footer-section {
+    padding: 20px 0; /* Increased padding */
+    color: #1F2A30;
+}
+
+.footer-title {
+    font-size: 24px; /* Slightly larger for emphasis */
+    margin-bottom: 20px;
+    color: #36454F;
+    text-transform: uppercase;
+}
+
+.footer-subscribe-form input {
+    width: 100%;
+    padding: 12px; /* Slightly increased padding */
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+.footer-subscribe-form button {
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    border: none;
+    color: #36454F;
+    border-radius: 10px;
+}
+
+/* Quick links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px; /* Slightly increased spacing */
+}
+
+.footer-links a {
+    color: #36454F;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Social media links */
+.footer-social {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center align social icons */
+}
+
+.footer-social li {
+    margin-right: 15px;
+}
+
+.footer-social a {
+    color: #36454F;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    color: #6B7C8A;
+}
 /* Media Queries */
 
 /* Slightly larger container on xl screens */
