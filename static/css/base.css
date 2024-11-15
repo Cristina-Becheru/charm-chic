@@ -43,6 +43,12 @@ body {
     background:  #6B7C8A;
     color: white;
 }
+.bg-black {
+    background: #EAEAEA;
+}
+#delivery-banner {
+    background:#D3D8DC;
+}
 /* Media Queries */
 
 /* Slightly larger container on xl screens */

@@ -1,0 +1,111 @@
+<div class="container-fluid d-lg-none bg-white">
+    <div class="row align-items-center py-2">
+        <!-- Toggle Button for Dropdown -->
+        <div class="col-2">
+            <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#mobileNavbar"
+                aria-controls="mobileNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
+        </div>
+
+        <!-- Search, Account, and Shopping Bag -->
+        <div class="col-10 text-right">
+            <ul class="list-inline m-0">
+                <!-- Search Icon -->
+                <li class="list-inline-item">
+                    <div class="dropdown d-lg-none">
+                        <button class="btn text-dark border-0 bg-white" type="button" id="mobile-search"
+                            data-toggle="dropdown" aria-expanded="false" aria-label="search dropdown button">
+                            <div class="text-center">
+                                <i class="fas fa-search fa-lg"></i>
+                            </div>
+                        </button>
+                        <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
+                            <form class="form" method="GET" action="">
+                                <div class="input-group w-100">
+                                    <input class="form-control border border-black rounded-0" type="text" name="q"
+                                        placeholder="SEARCH PRODUCTS" aria-label="search input field">
+                                    <div class="input-group-append">
+                                        <button class="form-control btn btn-black border border-black rounded-0"
+                                            type="submit" aria-label="search button">
+                                            <i class="fas fa-search fa-lg"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Account Icon -->
+                <li class="list-inline-item">
+                    <div class="dropdown d-lg-none">
+                        <button class="btn text-dark" type="button" id="user-options" data-toggle="dropdown"
+                            aria-expanded="false" aria-label="my account dropdown">
+                            <div class="text-center">
+                                <i class="fas fa-user fa-lg"></i>
+                            </div>
+                        </button>
+                        <ul class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="user-options">
+                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                            <li><a href="" class="dropdown-item text-right">Product
+                                    Management</a></li>
+                            {% endif %}
+                            <li><a href="" class="dropdown-item text-right">My Profile</a></li>
+                            <li><a href="{% url 'account_logout' %}" class="dropdown-item text-right">Logout</a></li>
+                            {% else %}
+                            <li><a href="{% url 'account_signup' %}" class="dropdown-item text-right">Register</a></li>
+                            <li><a href="{% url 'account_login' %}" class="dropdown-item text-right">Login</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Shopping Bag Icon -->
+                <li class="list-inline-item">
+                    <a class="d-lg-none {% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %}"
+                        href="" aria-label="grand total and link to shopping bag">
+                        <p class="my-0 text-dark">
+                            <i class="fas fa-shopping-basket"></i>
+                            {% if grand_total %}
+                            £{{ grand_total|floatformat:2 }}
+                            {% else %}
+                            £0.00
+                            {% endif %}
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Collapsible Navbar -->
+    <div class="collapse" id="mobileNavbar">
+        <ul class="list-unstyled py-3">
+            <li class="py-1"><a class="nav-link text-dark text-uppercase" href="{% url 'home' %}">Home</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="">All Products</a>
+            </li>
+            <li class="py-1 dropdown">
+                <a class="nav-link text-dark text-uppercase dropdown-toggle" href="#" id="shop-subcategories"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+                <ul class="dropdown-menu border-0" aria-labelledby="shop-subcategories">
+                    <h6 class="dropdown-header">Shop by Jewelry Type</h6>
+                    <li><a href="" class="dropdown-item">Necklace</a></li>
+                    <li><a href="" class="dropdown-item">Earrings</a></li>
+                    <li><a href="" class="dropdown-item">Bracelet</a></li>
+                    <li><a href="" class="dropdown-item">Ring</a></li>
+                    <div class="dropdown-divider"></div>
+                    <h6 class="dropdown-header">Shop by Color</h6>
+                    <li><a href="" class="dropdown-item">White Pearls</a></li>
+                    <li><a href="" class="dropdown-item">Black Pearls</a></li>
+                    <li><a href="" class="dropdown-item">Pink Pearls</a></li>
+                    <li><a href="" class="dropdown-item">Golden Pearls</a></li>
+                </ul>
+            </li>
+            <li class="py-1"><a class="nav-link text-dark text-uppercase" href="">About</a></li>
+            <li class="py-1"><a class="nav-link text-dark text-uppercase" href="">Contact</a></li>
+        </ul>
+    </div>
+</div>
