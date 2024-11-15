@@ -22,42 +22,56 @@
         <div class="col text-center">
             {% if current_categories %}
             {% for category in current_categories %}
-            <a href="{% url 'products' %}?category={{ category.name }}"
-                class="badge badge-pill badge-light border border-secondary p-2 mx-1">{{ category.friendly_name }}
+            <a href="{% url 'products' %}?category={{ category.name }}" class="badge badge-pill badge-light border border-secondary p-2 mx-1">
+                {{ category.friendly_name }}
             </a>
             {% endfor %}
             {% endif %}
         </div>
     </div>
-     <!-- Sorting Dropdown  -->
-     <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end my-auto">
+    <!-- Product Count -->
+     <div class="row mb-4 align-items-center">
+        <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start my-auto">
+            <div class="product-info-container d-flex align-items-center mb-3">
+                <a href="{% url 'products' %}" class="logo-font rounded-pill px-2 py-2">
+                    <span>Products Home</span>
+                </a>
+                <span class="logo-font separator mx-2">|</span>
+                <span class="logo-font text-muted product-count px-3 py-2">{{ products|length }} Items Available</span>
+            </div>
+            {% if search_term %}
+            <div class="search-result mt-1 text-md-left text-center w-100">
+                <small>Results for: <strong>"{{ search_term }}"</strong></small>
+            </div>
+            {% endif %}
+        </div>
+
+    <!-- Sorting Dropdown -->
+    <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end my-auto">
         <div class="dropdown sorting-options mb-3">
             <button class="logo-font btn btn-outline-secondary dropdown-toggle rounded-pill px-3 py-2" type="button"
                 id="sortDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Sort by
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sortDropdown">
-                <a class="dropdown-item {% if current_sorting == 'price_asc' %}active{% endif %}"
-                    href="?sort=price_asc">
+                <a class="dropdown-item {% if current_sorting == 'price_asc' %}active{% endif %}" href="?sort=price_asc">
                     <i class="fas fa-sort-amount-down-alt mr-1"></i> Price (low to high)
                 </a>
-                <a class="dropdown-item {% if current_sorting == 'price_desc' %}active{% endif %}"
-                    href="?sort=price_desc">
+                <a class="dropdown-item {% if current_sorting == 'price_desc' %}active{% endif %}" href="?sort=price_desc">
                     <i class="fas fa-sort-amount-up mr-1"></i> Price (high to low)
                 </a>
-                <a class="dropdown-item {% if current_sorting == 'name_asc' %}active{% endif %}"
-                    href="?sort=name_asc">
+                <a class="dropdown-item {% if current_sorting == 'name_asc' %}active{% endif %}" href="?sort=name_asc">
                     <i class="fas fa-sort-alpha-down mr-1"></i> Name (A-Z)
                 </a>
-                <a class="dropdown-item {% if current_sorting == 'name_desc' %}active{% endif %}"
-                    href="?sort=name_desc">
+                <a class="dropdown-item {% if current_sorting == 'name_desc' %}active{% endif %}" href="?sort=name_desc">
                     <i class="fas fa-sort-alpha-up mr-1"></i> Name (Z-A)
                 </a>
             </div>
         </div>
     </div>
+
 </div>
-</div>
+
 <!-- Product Grid -->
 <div class="container">
     <div class="row justify-content-center">
@@ -74,42 +88,50 @@
                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                 </a>
                 {% endif %}
-               <!-- Product Information -->
-               <div class="card-body p-3">
-                <h4 class="card-title mb-2">{{ product.name }}</h4>
-                <p class="card-text mb-2">£{{ product.price }}</p>
-                <!-- View Details Link -->
-                <a href="{% url 'product_detail' product.id %}"
-                   class="category-link font-weight-bold small mt-2 d-inline-block">View Details</a>
-                   </div>
+                <!-- Product Information -->
+                <div class="card-body p-3">
+                    <h4 class="card-title mb-2">{{ product.name }}</h4>
+                    <p class="card-text mb-2">£{{ product.price }}</p>
+                    {% if product.subcategory %}
+                    <p class="small mt-1 mb-0">
+                        <a class="text-muted" href="{% url 'products' %}?subcategory={{ product.subcategory.name }}">
+                            <i class="fas fa-tag mr-1"></i>{{ product.subcategory.friendly_name }}
+                        </a>
+                    </p>
+                    {% endif %}
+                    <!-- View Details Link -->
+                    <a href="{% url 'product_detail' product.id %}" class="category-link font-weight-bold small mt-2 d-inline-block">View Details</a>
+                </div>
             </div>
         </div>
-          {% if forloop.counter|divisibleby:1 %}
-          <div class="col-12 d-sm-none mb-5">
-              <hr>
-          </div>
-      {% endif %}
-      {% if forloop.counter|divisibleby:2 %}
-          <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-              <hr>
-          </div>
-      {% endif %}
-      {% if forloop.counter|divisibleby:3 %}
-          <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-              <hr>
-          </div>
-      {% endif %}
-      {% if forloop.counter|divisibleby:4 %}
-          <div class="col-12 d-none d-xl-block mb-5">
-              <hr>
-          </div>
-      {% endif %}
-      
-  {% empty %}
-      <div class="col-12 text-center">
-          <p class="text-muted">No products found.</p>
-      </div>
-  {% endfor %}
+        {% if forloop.counter|divisibleby:1 %}
+        <div class="col-12 d-sm-none mb-5">
+            <hr>
+        </div>
+        {% endif %}
+        {% if forloop.counter|divisibleby:2 %}
+        <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+            <hr>
+        </div>
+        {% endif %}
+        {% if forloop.counter|divisibleby:3 %}
+        <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+            <hr>
+        </div>
+        {% endif %}
+        {% if forloop.counter|divisibleby:4 %}
+        <div class="col-12 d-none d-xl-block mb-5">
+            <hr>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
 </div>
-</div>       
+
+<!-- No products found message -->
+{% if products|length == 0 %}
+<div class="col-12 text-center">
+    <p class="text-muted">No products found.</p>
+</div>
+{% endif %}
 {% endblock %}
