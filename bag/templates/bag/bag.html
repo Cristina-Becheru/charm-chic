@@ -17,8 +17,95 @@
 <div class="overlay"></div>
 <div class="container-fluid">
     <div class="row my-2">
-    
-    
+        <div class="col">
+            {% if bag_items %}
+            <!-- Bag Items List -->
+            {% for item in bag_items %}
+            <div class="bg-white rounded shadow-sm p-3 mb-3">
+                <div class="row align-items-center">
+                     <!-- Product Info -->
+                     <div class="col-12 col-md-6 text-center mb-3">
+                        <h6><strong>Product Info</strong></h6>
+                        <div class="d-flex align-items-center">
+                            <div class="col-4"></div>
+                                {% if item.product.image %}
+                                    <img class="img-thumbnail img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                {% else %}
+                                    <img class="img-thumbnail img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                {% endif %}
+                            </div>
+                            <div class="ms-3">
+                                <h6 class="mb-1">{{ item.product.name }}</h6>
+                                <div class="badge bg-info text-dark">
+                                    {% if item.size %}
+                                        Size: {{ item.size|upper }}
+                                    {% else %}
+                                        No Size Selected
+                                    {% endif %}
+                                </div>
+                                <div class="small text-muted">SKU: {{ item.product.sku|upper }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Quantity Control -->
+                    <div class="quantity-control">
+                        <h6 class="fw-bold">Quantity</h6>
+                        <div class="input-group mb-2">
+                            <button class="btn btn-outline-dark decrement-qty" data-item-id="{{ item.item_id }}" onclick="updateQuantity('{{ item.item_id }}', -1)">-</button>
+                            <input id="qty_{{ item.item_id }}" type="number" class="form-control text-center" value="{{ item.quantity }}" min="1" max="99" readonly>
+                            <button class="btn btn-outline-dark increment-qty" data-item-id="{{ item.item_id }}" onclick="updateQuantity('{{ item.item_id }}', 1)">+</button>
+                        </div>
+                        </div>
+                    </div>
 
+                    <!-- Unit Price -->
+                    <div class="col-6 col-md-1 text-center">
+                        <h6><strong>Unit Price</strong></h6>
+                        <p class="mb-0">£{{ item.product.price }}</p>
+                    </div>
 
+                    <!-- Total Price -->
+                    <div class="col-6 col-md-2 text-center">
+                        <h6><strong>Total</strong></h6>
+                        <p class="mb-0">£{{ item.total_price }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <!-- Total Summary -->
+            <div class="d-flex justify-content-end mt-4">
+                <div class="text-right">
+                    <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
+                    <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
+                    <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
+                    {% if free_delivery_delta > 0 %}
+                        <p class="mb-1 text-danger">Spend <strong>£{{ free_delivery_delta|floatformat:2 }}</strong> more to qualify for free delivery!</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="d-flex justify-content-between mt-4">
+                <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-pill mt-3">
+                    <i class="fas fa-chevron-left"></i> Continue Shopping
+                </a>
+                <a href="" class="btn btn-dark rounded-pill mt-3">
+                    Proceed to Checkout
+                </a>
+            </div>
+            {% else %}
+            <p class="lead text-center mt-5">Your bag is currently empty.</p>
+            <div class="text-center">
+                <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-pill mt-3">
+                    <i class="fas fa-chevron-left"></i> Keep Shopping
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock %}
+
+                
+

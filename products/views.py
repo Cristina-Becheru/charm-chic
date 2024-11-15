@@ -72,8 +72,27 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     
+     # Define size options based on subcategory name
+    if product.subcategory and product.subcategory.name == 'Rings':
+        size_options = ['Size 5', 'Size 6', 'Size 7', 'Size 8']
+        size_label = "Ring Size"
+    elif product.subcategory and product.subcategory.name == 'Necklaces':
+        size_options = ['16 inches', '18 inches', '20 inches']
+        size_label = "Necklace Length"
+    elif product.subcategory and product.subcategory.name == 'Bracelets':
+        size_options = ['6 inches', '7 inches', '8 inches']
+        size_label = "Bracelet Length"
+    elif product.subcategory and product.subcategory.name == 'Earrings':
+        size_options = ['One-size']
+        size_label = "Earring Size"
+    else:
+        size_options = ['N/A']
+        size_label = "Size"
+
     context = {
         'product': product,
+        'size_options': size_options,
+        'size_label': size_label,
         }
 
     return render(request, 'products/product_detail.html', context)
