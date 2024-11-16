@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-
+    <link rel="stylesheet" href="{% static 'products/css/add_product.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col text-center">
             <hr class="my-4">
-            <h4 class="logo-font product-header">Add Product</h4>
+            <h4 class="logo-font product-header">Edit a Product</h4>
             <hr class="my-3">
         </div>
     </div>
@@ -22,32 +22,21 @@
     <div class="row">
         <div class="col-12 col-lg-6">
             <p class="text-muted">Please fill out the form below to add a new product</p>
-            <form method="POST" action="{% url 'add_product' %}" enctype="multipart/form-data">
+            <form method="POST" action="{% url 'edit_product' product.id %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 <fieldset class="border p-2 mb-3">
                     {% for field in form %}
-                    {% if field.name == 'rating' %}
-                    {{ field|as_crispy_field }}
-                    <!-- Rating Guide -->
-                    <small class="text-muted d-block mt-1">
-                        Rating scale: 1
-                        {% for i in "12345" %}
-                        <i class="fas fa-star"></i>
-                        {% endfor %}
-                        (5 is the highest rating)
-                    </small>
-                    {% elif field.name != 'image' %}
-                    {{ field|as_crispy_field }}
-                    {% else %}
-                    {{ field }}
-                    {% endif %}
+                        {% if field.name != 'image' %}
+                            {{ field|as_crispy_field }}
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
                     {% endfor %}
                 </fieldset>
 
-
                 <div class="d-flex justify-content-between align-items-center mt-4">
                     <a href="{% url 'products' %}" class="btn btn-outline-dark">Cancel</a>
-                    <button class="btn btn-black rounded-0" type="submit">Add Product</button>
+                    <button class="btn btn-black rounded-0" type="submit">Update Product</button>
                 </div>
             </form>
         </div>
