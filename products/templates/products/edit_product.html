@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'products/css/add_product.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -19,27 +18,49 @@
 
 {% block content %}
 <div class="container mb-5">
-    <div class="row">
-        <div class="col-12 col-lg-6">
-            <p class="text-muted">Please fill out the form below to add a new product</p>
-            <form method="POST" action="{% url 'edit_product' product.id %}" enctype="multipart/form-data">
-                {% csrf_token %}
-                <fieldset class="border p-2 mb-3">
-                    {% for field in form %}
-                        {% if field.name != 'image' %}
-                            {{ field|as_crispy_field }}
-                        {% else %}
-                            {{ field }}
-                        {% endif %}
-                    {% endfor %}
-                </fieldset>
-
-                <div class="d-flex justify-content-between align-items-center mt-4">
-                    <a href="{% url 'products' %}" class="btn btn-outline-dark">Cancel</a>
-                    <button class="btn btn-black rounded-0" type="submit">Update Product</button>
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-header text-center">
+                    <p class="text-muted mb-0">Please fill out the form below to update your product details</p>
                 </div>
-            </form>
+                <div class="card-body">
+                    <form method="POST" action="{% url 'edit_product' product.id %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <!-- Form fields -->
+                        <fieldset class="border p-3 mb-3">
+                            {% for field in form %}
+                                {% if field.name != 'image' %}
+                                    <div class="mb-3">
+                                        {{ field|as_crispy_field }}
+                                    </div>
+                                {% else %}
+                                    <div class="mb-3">
+                                        {{ field }}
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </fieldset>
+
+                        <!-- Action buttons -->
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="{% url 'products' %}" class="btn btn-outline-dark">Cancel</a>
+                            <button class="btn btn-black rounded-0" type="submit">Update Product</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        $('#new-image').change(function() {
+            var file = $('#new-image')[0].files[0];
+            $('#filename').text(`Image will be set to: ${file.name}`);
+        });
+    </script>
 {% endblock %}
