@@ -101,6 +101,14 @@
                     {% endif %}
                     <!-- View Details Link -->
                     <a href="{% url 'product_detail' product.id %}" class="category-link font-weight-bold small mt-2 d-inline-block">View Details</a>
+                    <!-- Edit and Delete Buttons -->
+                    {% if request.user.is_staff %}
+                    <div class="mt-3">
+                        <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-outline-info mx-1">Edit</a>
+                        <a href="{% url 'delete_product' product.id %}"
+                            class="btn btn-sm btn-outline-danger mx-1">Delete</a>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
