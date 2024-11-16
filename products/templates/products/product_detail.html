@@ -1,14 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col text-center"></div>
+        <div class="col-12 text-center">
+            <hr>
+            <h4 class="logo-font pt-4">Products</h4>
+            <hr>
+        </div>
     </div>
 </div>
 {% endblock %}
-
 {% block content %}
 <div class="overlay"></div>
 <div class="container-fluid">
@@ -18,36 +20,37 @@
             <div class="image-container my-5">
                 {% if product.image %}
                 <a href="{{ product.image.url }}" target="_blank">
-                    <img class="card-img-top img-fluid mb-2" src="{{ product.image.url }}"
-                        alt="{{ product.name }} - Main Image">
+                <img class="card-img-top img-fluid mb-2" src="{{ product.image.url }}"
+                    alt="{{ product.name }} - Main Image">
                 </a>
                 {% else %}
                 <a href="#">
-                    <img class="card-img-top img-fluid mb-2" src="{{ MEDIA_URL }}noimage.png"
-                        alt="{{ product.name }} - Main Image">
+                <img class="card-img-top img-fluid mb-2" src="{{ MEDIA_URL }}noimage.png"
+                    alt="{{ product.name }} - Main Image">
                 </a>
                 {% endif %}
             </div>
         </div>
         <!-- Product Details Section -->
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 col-lg-4 my-5">
             <div class="product-details">
                 <p class="mb-0 text-uppercase">{{ product.name }}</p>
-                <p class="lead mt-0">£{{ product.price }}</p>
+                <p class="lead mt-0 text-left">£{{ product.price }}</p>
                 {% if product.rating %}
-                <p class="text-warning product-rating">
-                    {% for i in "12345" %}
-                    <i class="fas fa-star{% if i > product.rating|stringformat:" d" %}-o{% endif %}"></i>
-                    {% endfor %}
-                    <small class="text-muted">({{ product.rating }} / 5)</small>
-                </p>
+                    <p class="text-warning product-rating">
+                        {% for i in "12345" %}
+                            <i class="fas fa-star{% if i > product.rating|stringformat:"d" %}-o{% endif %}"></i>
+                        {% endfor %}
+                        <small class="text-muted">({{ product.rating }} / 5)</small>
+                    </p>
                 {% else %}
-                <p class="text-muted">No Rating</p>
+                    <p class="text-muted">No Rating</p>
                 {% endif %}
+               
                 {% if product.subcategory %}
                 <p class="small mt-1 mb-0">
                     <a class="text-muted" href="{% url 'products' %}?subcategory={{ product.subcategory.name }}">
-                        <i class="fas fa-tag mr-1"></i>{{ product.subcategory.friendly_name }}
+                    <i class="fas fa-tag mr-1"></i>{{ product.subcategory.friendly_name }}
                     </a>
                 </p>
                 {% endif %}
@@ -77,16 +80,14 @@
                                 data-item_id="{{ product.id }}">+</button>
                         </div>
                     </div>
-
                     <div class="d-flex mt-3">
                         <button type="submit" class="btn btn-dark btn-md mr-3">
-                            <i class="fas fa-shopping-basket"></i> Add to Bag
+                        <i class="fas fa-shopping-basket"></i> Add to Bag
                         </button>
                         <a href="{% url 'products' %}" class="btn btn-secondary btn-md">
-                            <i class="fas fa-shopping-cart"></i> Keep Shopping
+                        <i class="fas fa-shopping-cart"></i> Keep Shopping
                         </a>
                     </div>
-
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </form>
             </div>

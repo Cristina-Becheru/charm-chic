@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% load bag_tools %}
+
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -114,7 +116,7 @@
                 <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-pill mt-3">
                     <i class="fas fa-chevron-left"></i> Continue Shopping
                 </a>
-                <a href="" class="btn btn-dark rounded-pill mt-3">
+                <a href="{% url 'checkout' %}" class="btn btn-dark rounded-pill mt-3">
                     Proceed to Checkout
                 </a>
             </div>

@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bag_tools %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <hr class="my-3">
+            <h4 class="logo-font product-header">Checkout</h4>
+            <hr class="my-3">
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container mb-5">
+<div class="row">
+<div class="col-12 col-lg-6 order-lg-last mb-5">
+   <p class="text-muted">Order Summary ({{ product_count }})</p>
+   <div class="order-summary">
+      {% for item in bag_items %}
+      <div class="row">
+         <div class="col-2 mb-1">
+            <a href="{% url 'product_detail' item.product.id %}">
+            {% if item.product.image %}
+            <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+            {% else %}
+            <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="No image">
+            {% endif %}
+            </a>
+         </div>
+         <div class="col-7">
+            <h6 class="mb-1">{{ item.product.name }}</h6>
+            <div class="small text-dark">Size: {% if item.size %}{{ item.size|upper }}{% else %}N/A{% endif %}</div>
+            <div class="small text-dark">Qty: {{ item.quantity }}</div>
+         </div>
+         <div class="col-3 text-right">
+            <div class="mb-1">£{{ item.total_price|floatformat:2 }}</div>
+         </div>
+      </div>
+      {% endfor %}
+   </div>
+   <hr>
+   <div class="order-totals text-right">
+      <p class="mb-1">Order Total: <span>£{{ total|floatformat:2 }}</span></p>
+      <p class="mb-1">Delivery: <span>£{{ delivery|floatformat:2 }}</span></p>
+      <p class="font-weight-bold">Grand Total: <span>£{{ grand_total|floatformat:2 }}</span></p>
+   </div>
+</div>
+<div class="col-12 col-lg-6">
+<p class="text-muted">Please fill out the form below to complete your order</p>
+<form action="{% url 'checkout' %}" method="POST" id="payment-form" autocomplete="off">
+{% csrf_token %}
+<fieldset class="border p-2 mb-3">
+   <legend class="w-auto small">Personal Details</legend>
+   {{ order_form.full_name | as_crispy_field }}
+   {{ order_form.email | as_crispy_field }}
+</fieldset>
+<fieldset class="border p-2 mb-3">
+   <legend class="w-auto small">Delivery Address</legend>
+   {{ order_form.phone_number | as_crispy_field }}
+   {{ order_form.street_address1 | as_crispy_field }}
+   {{ order_form.street_address2 | as_crispy_field }}
+   {{ order_form.town_or_city | as_crispy_field }}
+   {{ order_form.county | as_crispy_field }}
+   {{ order_form.postcode | as_crispy_field }}
+   {{ order_form.country | as_crispy_field }}
+   <div class="form-check my-1">
+      {% if user.is_authenticated %}
+      <input type="checkbox" class="form-check-input" id="save-info" name="save-info" checked>
+      <label for="save-info" class="form-check-label">Save this information for next time</label>
+      {% else %}
+      <p class="small">Create an <a href="{% url 'account_signup' %}">account</a> or <a href="{% url 'account_login' %}">log in</a> to save this information for future use.</p>
+      {% endif %}
+   </div>
+</fieldset>
+<fieldset class="border p-2 mb-3">
+    <legend class="w-auto small">Payment Details</legend>
+    <!-- A Stripe card element will go here -->
+    <div id="card-element" class="form-control mb-2" autocomplete="off"></div>
+    <!-- Used to display form errors -->
+    <div id="card-errors" role="alert" class="text-danger small"></div>
+    <!-- Pass the client secret to the view so we can get the payment intent id -->
+    <input type="hidden" value="{{ client_secret }}" name="client_secret">
+ </fieldset>
+ <div class="d-flex justify-content-between align-items-center mt-4">
+    <a href="{% url 'view_bag' %}" class="btn btn-outline-dark">Back to Bag</a>
+    <button id="submit-button" class="btn btn-black rounded-0">
+    <span class="font-weight-bold">Complete Order</span>
+    <span class="icon">
+    <i class="fas fa-lock"></i>
+    </span>
+    </button>
+ </div>
+ <p class="small mt-3 text-danger">
+    <i class="fas fa-exclamation-circle"></i> Your card will be charged <strong>£{{ grand_total|floatformat:2 }}</strong>
+ </p>
+ </form>
+ </div>
+ </div>
+ </div>
+ {% endblock %}
