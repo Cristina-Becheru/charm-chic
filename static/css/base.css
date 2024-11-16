@@ -395,13 +395,16 @@ p {
 }
 
 /* Footer */
+
 .custom-bg-wrapper {
     background-color: #D3D8DC;
     padding: 20px 0; /* Increased padding for more height */
+    margin-top: 20px;
+    
 }
 
 .footer-section {
-    padding: 20px 0; /* Increased padding */
+    padding: 10px 0; /* Increased padding */
     color: #1F2A30;
 }
 

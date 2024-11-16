@@ -1,25 +1,38 @@
-{% extends "account/base_manage.html" %}
-{% load allauth i18n %}
-{% block head_title %}
-    {% trans "Sign Out" %}
-{% endblock head_title %}
-{% block content %}
-    {% element h1 %}
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+
+{% block inner_content %}
+
+  <!-- Page Header -->
+  <hr>
+  <h3 class="logo-font product-header text-center">{% trans "Sign Out" %}</h3>
+  <hr>
+
+  <!-- Sign Out Confirmation Message -->
+  <p class="text-center text-muted mb-4">
+    {% trans 'Are you sure you want to sign out?' %}
+  </p>
+
+  <!-- Sign Out Form -->
+  <form method="post" action="{% url 'account_logout' %}">
+    {% csrf_token %}
+    {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+    {% endif %}
+
+    <!-- Action Buttons -->
+    <div class="d-flex justify-content-between mt-3">
+      <a href="{% url 'home' %}" class="btn btn-outline-secondary rounded-pill text-uppercase py-2 px-2" aria-label="Cancel and return to homepage">
+        {% trans "Cancel" %}
+      </a>
+      <button type="submit" class="btn btn-outline-primary rounded-pill text-uppercase py-2 px-4" aria-label="Confirm sign out">
         {% trans "Sign Out" %}
-    {% endelement %}
-    {% element p %}
-        {% trans 'Are you sure you want to sign out?' %}
-    {% endelement %}
-    {% url 'account_logout' as action_url %}
-    {% element form method="post" action=action_url no_visible_fields=True %}
-        {% slot body %}
-            {% csrf_token %}
-            {{ redirect_field }}
-        {% endslot %}
-        {% slot actions %}
-            {% element button type="submit" %}
-                {% trans 'Sign Out' %}
-            {% endelement %}
-        {% endslot %}
-    {% endelement %}
-{% endblock content %}
+      </button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
