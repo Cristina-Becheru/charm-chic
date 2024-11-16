@@ -12,8 +12,8 @@ class OrderForm(forms.ModelForm):
 
 def __init__(self, *args, **kwargs):
         """
-        Initialize the form with custom placeholders, CSS classes,
-        and remove labels. Sets autofocus on the first field.
+        Add placeholders and classes, remove auto-generated
+        labels and set autofocus on first field
         """
         super().__init__(*args, **kwargs)
         placeholders = {
@@ -25,8 +25,6 @@ def __init__(self, *args, **kwargs):
             'street_address1': 'Street Address 1',
             'street_address2': 'Street Address 2',
             'county': 'County, State or Locality',
-            
-            
         }
         
         self.fields['full_name'].widget.attrs['autofocus'] = True
