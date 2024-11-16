@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_header %}
+<div class="container header-container mt-5">
+    <div class="row">
+        <div class="col text-center">
+            <hr class="my-3">
+            <h4 class="logo-font product-header">Order Confirmation</h4>
+            <hr class="my-3">
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container mb-5">
+<div class="row">
+    <div class="col-12 col-lg-6 order-lg-last mb-5">
+        <h2 class="logo-font">Thank You!</h2>
+        <p>Your order has been placed successfully. An email confirmation has been sent to <strong>{{order.email}}</strong>.</p>
+        <p>Order Number: <strong>{{ order.order_number }}</strong></p>
+        <p>Date: <strong>{{ order.date|date:"D, d M Y - H:i" }}</strong></p>
+        <hr>
+    </div>
+    <div class="d-flex flex-column align-items-center">
+        <div class="row w-100 justify-content-center">
+            <!-- Order Summary -->
+            <div class="col-lg-4 mb-3">
+                <h5 class="font-weight-bold">Order Details</h5>
+                <div class="p-3 border rounded bg-light">
+                    {% for item in order.lineitems.all %}
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="row w-100">
+                            <div class="col-3 mb-1">
+                                <a href="{% url 'product_detail' item.product.id %}">
+                                {% if item.product.image %}
+                                <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                {% else %}
+                                <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="No image">
+                                {% endif %}
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <h6 class="mb-1">{{ item.product.name }}</h6>
+                                <div class="small">Size: {{ item.product_size|default:"N/A"|upper }}</div>
+                                <div class="small">Qty: {{ item.quantity }}</div>
+                            </div>
+                            <div class="col-3 text-right">
+                                <p class="mb-1">£{{ item.lineitem_total|floatformat:2 }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <!-- Delivery Information -->
+            <div class="col-lg-4 mb-3">
+                <h5 class="font-weight-bold">Delivery Information</h5>
+                <div class="p-3 border rounded bg-light">
+                    <div>
+                        <h6 class="mb-1"><strong>Name:</strong> {{ order.full_name }}</h6>
+                        <h6 class="mb-1"><strong>Phone:</strong> {{ order.phone_number }}</h6>
+                        <h6 class="mb-1"><strong>Address:</strong></h6>
+                        <ul class="list-unstyled">
+                            <li>{{ order.street_address1 }}</li>
+                            {% if order.street_address2 %}
+                            <li>{{ order.street_address2 }}</li>
+                            {% endif %}
+                            <li>{{ order.town_or_city }}</li>
+                            <li>{{ order.county }}</li>
+                            <li>{{ order.postcode }}</li>
+                            <li>{{ order.country }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Total Summary -->
+            <div class="col-lg-4 mb-3">
+                <h5 class="font-weight-bold">Total Summary</h5>
+                <div class="p-3 border rounded bg-light">
+                    <h6 class="mb-1"><strong>Subtotal:</strong> £{{ order.order_total|floatformat:2 }}</h6>
+                    <h6 class="mb-1"><strong>Delivery:</strong> £{{ order.delivery_cost|floatformat:2 }}</h6>
+                    <h6 class="mb-1"><strong>Grand Total:</strong> £{{ order.grand_total|floatformat:2 }}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-7 text-right">
+            {% if from_profile %}
+            <a href="{% url 'profile' %}" class="btn btn-dark rounded-pill px-5">
+            <span class="icon mr-2">
+            <i class="fas fa-angle-left"></i>
+            </span>
+            <span class="text-uppercase">Back to Profile</span>
+            </a>
+            {% else %}
+            <a href="{% url 'products' %}?tag=New%20Arrivals" class="btn btn-dark rounded-pill px-5">
+            <i class="fas fa-shopping-bag mr-2"></i>
+            <span class="text-uppercase">Explore New Arrivals</span>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
