@@ -6,27 +6,37 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block inner_content %}
-
-  <!-- Page Header -->
-  <hr>
-  <h3 class="logo-font product-header text-center">{% trans "Sign In" %}</h3>
-  <hr>
-
-  <!-- Sign Up Message -->
-  <p class="text-center text-muted mb-4">
-    {% blocktrans %}New to our site? 
-      <a href="{{ signup_url }}"><u>Sign up</u></a> to create an account.{% endblocktrans %}
-  </p>
-
-  <!-- Login Form -->
-  <form class="login" method="POST" action="{% url 'account_login' %}">
-    {% csrf_token %}
-    {{ form|crispy }}
-    {% if redirect_field_value %}
-    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-    {% endif %}
-    <a class="btn btn-outline-black rounded-0" href="{% url 'home' %}">Home</a>
-    <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-  </form>
-  
-  {% endblock %}
+<div class="container">
+  <div class="row justify-content-center">
+    <!-- Fully extended card width -->
+    <div class="col-md-10 col-lg-8">
+      <div class="card border shadow-sm">
+        <!-- Card Header -->
+        <div class="card-header bg-light text-center">
+          <h2>{% trans "Sign In" %}</h2>
+        </div>
+        <!-- Card Body -->
+        <div class="card-body">
+          <!-- Sign Up Message -->
+          <p class="text-center text-muted mb-4">
+            {% blocktrans %}New to our site? 
+              <a href="{{ signup_url }}"><u>Sign up</u></a> to create an account.{% endblocktrans %}
+          </p>
+          <!-- Login Form -->
+          <form class="login" method="POST" action="{% url 'account_login' %}">
+            {% csrf_token %}
+            {{ form|crispy }}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <div class="d-flex justify-content-between mt-4">
+              <a class="btn btn-outline-black rounded-0" href="{% url 'home' %}">Home</a>
+              <button class="btn btn-black rounded-0" type="submit">{% trans "Sign In" %}</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

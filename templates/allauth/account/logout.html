@@ -5,34 +5,40 @@
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block inner_content %}
-
-  <!-- Page Header -->
-  <hr>
-  <h3 class="logo-font product-header text-center">{% trans "Sign Out" %}</h3>
-  <hr>
-
-  <!-- Sign Out Confirmation Message -->
-  <p class="text-center text-muted mb-4">
-    {% trans 'Are you sure you want to sign out?' %}
-  </p>
-
-  <!-- Sign Out Form -->
-  <form method="post" action="{% url 'account_logout' %}">
-    {% csrf_token %}
-    {% if redirect_field_value %}
-      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-    {% endif %}
-
-    <!-- Action Buttons -->
-    <div class="d-flex justify-content-between mt-3">
-      <a href="{% url 'home' %}" class="btn btn-outline-secondary rounded-pill text-uppercase py-2 px-2" aria-label="Cancel and return to homepage">
-        {% trans "Cancel" %}
-      </a>
-      <button type="submit" class="btn btn-outline-primary rounded-pill text-uppercase py-2 px-4" aria-label="Confirm sign out">
-        {% trans "Sign Out" %}
-      </button>
+<div class="container">
+  <div class="row justify-content-center">
+    <!-- Fully extended card width -->
+    <div class="col-md-10 col-lg-8">
+      <div class="card border shadow-sm">
+        <!-- Card Header -->
+        <div class="card-header bg-light text-center">
+          <h2>{% trans "Sign Out" %}</h2>
+        </div>
+        <!-- Card Body -->
+        <div class="card-body">
+          <!-- Sign Out Confirmation Message -->
+          <p class="text-center text-muted mb-4">
+            {% trans 'Are you sure you want to sign out?' %}
+          </p>
+          <!-- Sign Out Form -->
+          <form method="post" action="{% url 'account_logout' %}">
+            {% csrf_token %}
+            {% if redirect_field_value %}
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+            {% endif %}
+            <!-- Action Buttons -->
+            <div class="d-flex justify-content-between mt-4">
+              <a href="{% url 'home' %}" class="btn btn-outline-secondary rounded-pill text-uppercase py-2 px-2" aria-label="Cancel and return to homepage">
+                {% trans "Cancel" %}
+              </a>
+              <button type="submit" class="btn btn-outline-primary rounded-pill text-uppercase py-2 px-4" aria-label="Confirm sign out">
+                {% trans "Sign Out" %}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-  </form>
+  </div>
 </div>
-
 {% endblock %}

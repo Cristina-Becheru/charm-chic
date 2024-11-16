@@ -5,28 +5,37 @@
 {% block head_title %}{% trans "Sign Up" %}{% endblock %}
 
 {% block inner_content %}
-
-  <!-- Page Header -->
-  <hr>
-  <h3 class="logo-font product-header text-center">{% trans "Sign Up" %}</h3>
-  <hr>
-
-  <!-- Sign In Message -->
-  <p class="text-center text-muted mb-4">
-    {% blocktrans %}Already have an account? Then please 
-      <a href="{{ login_url }}"><u>sign in</u></a>.{% endblocktrans %}
-  </p>
-
-  <!-- Sign Up Form -->
-  <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-    {% csrf_token %}
-    {{ form|crispy }}
-    {% if redirect_field_value %}
-    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-    {% endif %}
-    <a class="btn btn-outline-black rounded-0" href="{% url 'account_login' %}">Back to Login</a>
-    <button type="submit">{% trans "Sign Up" %}</button>
-  </form>
-  {% endblock %}
-
-   
+<div class="container">
+  <div class="row justify-content-center">
+    <!-- Fully extended card width -->
+    <div class="col-md-10 col-lg-8">
+      <div class="card border shadow-sm">
+        <!-- Card Header -->
+        <div class="card-header bg-light text-center">
+          <h2>{% trans "Sign Up" %}</h2>
+        </div>
+        <!-- Card Body -->
+        <div class="card-body">
+          <!-- Sign In Message -->
+          <p class="text-center text-muted mb-4">
+            {% blocktrans %}Already have an account? Then please 
+              <a href="{{ login_url }}"><u>sign in</u></a>.{% endblocktrans %}
+          </p>
+          <!-- Sign Up Form -->
+          <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+            {% csrf_token %}
+            {{ form|crispy }}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <div class="d-flex justify-content-between mt-4">
+              <a class="btn btn-outline-black rounded-0" href="{% url 'account_login' %}">Back to Login</a>
+              <button type="submit" class="btn btn-black rounded-0">{% trans "Sign Up" %}</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
