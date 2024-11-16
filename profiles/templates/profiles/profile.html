@@ -67,8 +67,9 @@
             </div>
         </div>
 </div>
-<!-- Profile Information -->
-<div class="container mt-4">
-    {{ profile }}
-</div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}
