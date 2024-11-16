@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 {% block page_header %}
-<div class="container header-container mt-5">
+<div class="container header-container">
     <div class="row">
         <div class="col text-center">
-            <hr class="my-3">
+            <hr class="my-4">
             <h4 class="logo-font product-header">Order Confirmation</h4>
             <hr class="my-3">
         </div>
@@ -12,9 +12,8 @@
 </div>
 {% endblock %}
 {% block content %}
-<div class="container mb-5">
-<div class="row">
-    <div class="col-12 col-lg-6 order-lg-last mb-5">
+<div class="container my-3">
+    <div class="text-center mb-3">
         <h2 class="logo-font">Thank You!</h2>
         <p>Your order has been placed successfully. An email confirmation has been sent to <strong>{{order.email}}</strong>.</p>
         <p>Order Number: <strong>{{ order.order_number }}</strong></p>
