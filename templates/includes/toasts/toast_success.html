@@ -64,3 +64,26 @@
        {% endif %}
     </div>
  </div>
+ <script type="text/javascript">
+   document.addEventListener('DOMContentLoaded', function() {
+       // Initialize toast
+       var toastElement = document.querySelector('.toast');
+       var toast = new bootstrap.Toast(toastElement); // Bootstrap 4
+
+       // Show toast automatically
+       toast.show();
+
+       // Event listener for when the toast is hidden
+       toastElement.addEventListener('hidden.bs.toast', function() {
+           console.log('Toast closed');
+           // Custom actions after toast is closed, if needed
+       });
+
+       // Optional: Add timeout or additional customization
+       setTimeout(function() {
+           if (toastElement.classList.contains('show')) {
+               toast.hide();
+           }
+       }, 5000); // Ensure toast hides after 5 seconds
+   });
+</script>

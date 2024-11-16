@@ -49,10 +49,10 @@
                         <ul class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
-                            <li><a href="" class="dropdown-item text-right">Product
+                            <li><a href="{% url 'add_product' %}" class="dropdown-item text-right">Product
                                     Management</a></li>
                             {% endif %}
-                            <li><a href="" class="dropdown-item text-right">My Profile</a></li>
+                            <li><a href="{% url 'profile' %}" class="dropdown-item text-right">My Profile</a></li>
                             <li><a href="{% url 'account_logout' %}" class="dropdown-item text-right">Logout</a></li>
                             {% else %}
                             <li><a href="{% url 'account_signup' %}" class="dropdown-item text-right">Register</a></li>
@@ -112,8 +112,8 @@
                     <a href="{% url 'products' %}?tag=New%20Arrivals" class="dropdown-item">New Arrivals</a>
                 </div>
             </li>
-            <li class="py-1"><a class="nav-link text-dark text-uppercase" href="">About</a></li>
-            <li class="py-1"><a class="nav-link text-dark text-uppercase" href="">Contact</a></li>
+            <li class="py-1"><a class="nav-link text-dark text-uppercase" href="{% url 'about' %}">About</a></li>
+            <li class="py-1"><a class="nav-link text-dark text-uppercase" href="{% url 'contact' %}">Contact</a></li>
         </ul>
     </div>
 </div>
