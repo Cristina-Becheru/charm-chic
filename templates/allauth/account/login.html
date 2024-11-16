@@ -15,26 +15,18 @@
   <!-- Sign Up Message -->
   <p class="text-center text-muted mb-4">
     {% blocktrans %}New to our site? 
-      <a href="{{ signup_url }}" class="text-dark"><u>Sign up</u></a> to create an account.{% endblocktrans %}
+      <a href="{{ signup_url }}"><u>Sign up</u></a> to create an account.{% endblocktrans %}
   </p>
 
   <!-- Login Form -->
-  <form class="login" method="POST" action="{% url 'account_login' %}" aria-label="username/email and password input fields">
+  <form class="login" method="POST" action="{% url 'account_login' %}">
     {% csrf_token %}
     {{ form|crispy }}
     {% if redirect_field_value %}
-      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
     {% endif %}
-
-    <!-- Action Buttons -->
-    <div class="d-flex justify-content-between mt-3">
-      <a href="{% url 'home' %}" class="btn btn-outline-secondary rounded-pill text-uppercase py-2 px-2" aria-label="Return to homepage">
-        {% trans "Return to Home" %}
-      </a>
-      <button class="btn btn-outline-primary rounded-pill text-uppercase py-2 px-4" type="submit" aria-label="Sign in">
-        {% trans "Sign In" %}
-      </button>
-    </div>
+    <a class="btn btn-outline-black rounded-0" href="{% url 'home' %}">Home</a>
+    <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
   </form>
-</div>
-{% endblock %}
+  
+  {% endblock %}

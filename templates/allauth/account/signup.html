@@ -14,7 +14,7 @@
   <!-- Sign In Message -->
   <p class="text-center text-muted mb-4">
     {% blocktrans %}Already have an account? Then please 
-      <a href="{{ login_url }}" class="text-dark"><u>sign in</u></a>.{% endblocktrans %}
+      <a href="{{ login_url }}"><u>sign in</u></a>.{% endblocktrans %}
   </p>
 
   <!-- Sign Up Form -->
@@ -22,19 +22,11 @@
     {% csrf_token %}
     {{ form|crispy }}
     {% if redirect_field_value %}
-      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
     {% endif %}
-
-    <!-- Action Buttons -->
-    <div class="d-flex justify-content-between mt-3">
-      <a href="{% url 'account_login' %}" class="btn btn-outline-secondary rounded-pill text-uppercase py-2 px-2" aria-label="Back to Login">
-        {% trans "Back to Login" %}
-      </a>
-      <button type="submit" class="btn btn-outline-primary rounded-pill text-uppercase py-2 px-4" aria-label="Sign up">
-        {% trans "Sign Up" %}
-      </button>
-    </div>
+    <a class="btn btn-outline-black rounded-0" href="{% url 'account_login' %}">Back to Login</a>
+    <button type="submit">{% trans "Sign Up" %}</button>
   </form>
-</div>
+  {% endblock %}
 
-{% endblock %}
+   
