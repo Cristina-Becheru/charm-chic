@@ -14,10 +14,13 @@ from pathlib import Path
 from dotenv import load_dotenv
 import os
 import dj_database_url
+import cloudinary
+import cloudinary_storage
 
 load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates'),
 
 
 # Quick-start development settings - unsuitable for production
@@ -31,7 +34,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = True
 
 
-
 ALLOWED_HOSTS = ['charm-chic-aed25148762b.herokuapp.com', 'localhost', 'localhost:8001']
 
 
@@ -43,22 +45,20 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'crispy_forms',
+    'cloudinary',
     'home',
     'bag',
     'products',
     'checkout',
     'profiles',
     
-    
-      # Other
-    'crispy_forms',
-    'cloudinary',
-    'cloudinary_storage', 
 
 ]
 

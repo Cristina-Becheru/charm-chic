@@ -20,6 +20,11 @@
                 <img class="card-img-top img-fluid mb-2" src="{{ product.image.url }}"
                     alt="{{ product.name }} - Main Image">
                 </a>
+                {% else %}
+                <a href="#">
+                <img class="card-img-top img-fluid mb-2" src="{{ MEDIA_URL }}noimage.png"
+                    alt="{{ product.name }} - Main Image">
+                </a>
                 {% endif %}
             </div>
         </div>
