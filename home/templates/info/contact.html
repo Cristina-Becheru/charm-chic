@@ -1,13 +1,59 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col-12 text-center">
-            <hr>
-            <h4 class="logo-font pt-4">Reach out to us</h4>
-            <hr>
+        <div class="col text-center">
+            <hr class="my-4">
+            <h4 class="logo-font product-header">Reach out to us</h4>
+            <hr class="my-3">
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <!-- Fully extended card width -->
+        <div class="col-md-10 col-lg-8">
+            <div class="card border shadow-sm">
+                <!-- Card Header -->
+                <div class="card-header bg-light text-center">
+                    <p class="text-center text-muted mb-4">We cherish every interaction. Share your thoughts or questions, and we will respond promptly.</p>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <!-- Contact Form -->
+                    <form action="{% url 'contact' %}" method="POST" id="contact-form">
+                        {% csrf_token %}
+                        <div class="form-group mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="yourname@example.com" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="(123) 456-7890">
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" placeholder="Write your message here..." required></textarea>
+                        </div>
+                        <!-- Submit & Back Buttons -->
+                        <div class="d-flex justify-content-between mt-4">
+                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-pill px-5">
+                            <span class="mr-2"><i class="fa-solid fa-chevron-left"></i></span> Back to Shop
+                            </a>
+                            <button class="btn btn-dark rounded-pill px-5" id="submit-button">
+                            <span class="mr-2"><i class="fa-regular fa-paper-plane"></i></span> Send
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
