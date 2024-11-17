@@ -28,6 +28,28 @@ To explore the payment feature, you can use the following test card details (pro
 ### Colors
 ## Marketing
 ### E-commerce Business Model
+Charm Chic operates under a B2C (Business-to-Customer) model, specializing in the sale of luxurious pearl jewelry directly to customers. The platform enables customers to browse, select, and purchase products seamlessly, offering a guest checkout option for quick transactions without requiring registration.
+
+The business leverages digital marketing channels, such as social media platforms like Instagram and Facebook, to promote its brand and engage with potential customers. This strategy helps build a loyal customer base by showcasing the elegance and craftsmanship of Charm Chic's products.
+
+*Target Audience:*
+
+Charm Chic caters to individuals who appreciate timeless and sophisticated jewelry. This includes fashion enthusiasts, gift shoppers, and anyone seeking elegant, handcrafted pearls for special occasions or daily wear. 
+Customers value Charm Chic for its:
+- High-quality materials
+- Unique and elegant designs
+- Fair pricing and reliability
+
+*Product Offering:*
+
+The collection includes a wide range of pearl jewelry, such as:
+
+- Necklaces
+- Earrings
+- Bracelets
+- Rings
+
+Each piece is designed to enhance the wearer’s style with a touch of grace and refinement.
 ### Facebook marketing 
 ### SEO
 The project incorporates comprehensive SEO enhancements to improve search engine visibility and user reach. 
