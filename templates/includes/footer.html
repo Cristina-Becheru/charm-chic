@@ -4,28 +4,43 @@
             <footer class="footer-section">
                 <div class="container">
                     <div class="row">
-                        <!-- Become a Member Column -->
-                        <div class="col-12 col-md-3 mb-4 mb-md-0">
+                        <!-- Newsletter Section -->
+                        <div class="col-12 col-md-4 mb-4 mb-md-0">
                             <h5 class="footer-title">Newsletter</h5>
-                            <form class="footer-subscribe-form">
-                                <input type="email" class="form-control" placeholder="Enter your email" required>
-                                <button type="submit" class="btn btn-light mt-2">Subscribe</button>
-                            </form>
-
-                            <!-- Social Icons -->
-                            <div class="footer-social-icons mt-3">
-                                <ul class="footer-social">
-                                    <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i
-                                                class="fab fa-facebook"></i></a></li>
-                                    <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i
-                                                class="fab fa-instagram"></i></a></li>
-                                    <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li><a href="https://github.com/Cristina-Becheru" target="_blank"
-                                            rel="noopener noreferrer"><i class="fab fa-github"></i></a></li>
-                                </ul>
+                            <!-- Mailchimp Embedded Form -->
+                            <div id="mc_embed_signup">
+                                <form
+                                    action="https://herokuapp.us16.list-manage.com/subscribe/post?u=ead34fb5d40d62e420682543a&amp;id=837aebe043&amp;f_id=00dac2e1f0"
+                                    method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                                    class="validate" target="_blank">
+                                    <div id="mc_embed_signup_scroll">
+                                        <div class="indicates-required"><span class="asterisk">*</span> indicates
+                                            required</div>
+                                        <div class="mc-field-group">
+                                            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                                            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL"
+                                                required="" value="">
+                                        </div>
+                                        <div id="mce-responses" class="clear foot">
+                                            <div class="response" id="mce-error-response" style="display: none;"></div>
+                                            <div class="response" id="mce-success-response" style="display: none;">
+                                            </div>
+                                        </div>
+                                        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                            <input type="text" name="b_ead34fb5d40d62e420682543a_837aebe043"
+                                                tabindex="-1" value="">
+                                        </div>
+                                        <div class="optionalParent">
+                                            <div class="clear foot">
+                                                <input type="submit" name="subscribe" id="mc-embedded-subscribe"
+                                                    class="button" value="Subscribe">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
+
                         <!-- Information Section -->
                         <div class="col-12 col-md-4 mb-4 mb-md-0">
                             <h5 class="footer-title">Information</h5>
@@ -44,12 +59,25 @@
                                         href="mailto:info@charmchic.com">info@charmchic.com</a></li>
                                 <li><i class="fas fa-phone-alt"></i> +1 234 567 890</li>
                                 <li><i class="fas fa-map-marker-alt"></i> 123 Pearl St, Jewelry City</li>
-                                <li><i class="fas fa-edit"></i> <a href="">Contact Form</a></li>
-                                <!-- Link to Contact Form -->
+                                <li><i class="fas fa-edit"></i> <a href="#">Contact Form</a></li>
                             </ul>
                         </div>
                     </div>
+                    <!-- Social Icons -->
+                    <div class="footer-social-icons mt-3">
+                        <ul class="footer-social">
+                            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i
+                                        class="fab fa-facebook"></i></a></li>
+                            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i
+                                        class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i
+                                        class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://github.com/Cristina-Becheru" target="_blank"
+                                    rel="noopener noreferrer"><i class="fab fa-github"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
+                <!-- Footer Bottom Section -->
                 <div class="row text-center mt-2">
                     <div class="col-12">
                         <p class="copyright">&copy; 2024 CharmChic for educational purposes.</p>
@@ -57,3 +85,30 @@
                 </div>
         </div>
         </footer>
+    </div>
+</div>
+</div>
+
+<!-- Mailchimp Script -->
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+<script type="text/javascript">
+    (function ($) {
+        window.fnames = new Array();
+        window.ftypes = new Array();
+        fnames[0] = 'EMAIL';
+        ftypes[0] = 'email';
+        fnames[1] = 'FNAME';
+        ftypes[1] = 'text';
+        fnames[2] = 'LNAME';
+        ftypes[2] = 'text';
+        fnames[3] = 'ADDRESS';
+        ftypes[3] = 'address';
+        fnames[4] = 'PHONE';
+        ftypes[4] = 'phone';
+        fnames[5] = 'BIRTHDAY';
+        ftypes[5] = 'birthday';
+        fnames[6] = 'COMPANY';
+        ftypes[6] = 'text';
+    })(jQuery);
+    var $mcj = jQuery.noConflict(true);
+</script>

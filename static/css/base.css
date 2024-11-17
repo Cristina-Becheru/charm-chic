@@ -396,7 +396,12 @@ p {
     color: #36454F; 
     margin-bottom: 15px; 
 }
-
+/* Mailchimp */
+  #mc_embed_signup{
+    background:#D3D8DC; 
+    clear:left; 
+    font: 14px 'Babylonica';
+    width: 200px;}
 
 /* Footer */
 
