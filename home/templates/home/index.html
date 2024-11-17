@@ -33,36 +33,34 @@
 </div>
 </header>
 <!-- Collection Section Below Video -->
-<section class="collection-section py-5 bg-light">
+<section class="collection-section py-5">
     <div class="container">
-        <div class="row">
-            <!-- Left Image -->
-            <div class="col-12 col-md-4 mb-4 mb-md-0">
-                <img src="{% static 'images/leftimage.webp' %}" alt="Left Image" class="img-fluid rounded shadow">
-            </div>
+        <div class="row align-items-center">
 
-            <!-- Highlights in the Middle -->
-            <div class="col-12 col-md-4 d-flex flex-column justify-content-center">
-                <div class="highlight-box p-3 bg-white shadow rounded">
-                    <h4 class="logo-font text-dark text-center">Experience Elegance Redefined</h4>
-                    <p class="text-center">Dive into our curated selection of timeless pearls and sophisticated jewelry
-                        pieces that enhance any look. Each item is designed to add a touch of grace and refinement to
-                        your style.</p>
-                    <div class="mt-4">
-                        <a href=""
-                            class="shop-now-button btn btn-md btn-outline-light rounded-pill text-uppercase py-2 px-4">Explore the
-                            Collection</a>
+            <!-- Left Image with Hover Effect -->
+            <div class="col-12 col-md-6 mb-4 mb-md-0">
+                <div class="collection-image-container position-relative overflow-hidden rounded">
+                    <img src="{% static 'images/background.webp' %}" alt="Left Image" class="img-fluid rounded">
+                    <div class="collection-overlay position-absolute top-0 left-0 w-100 h-100 d-flex justify-content-center align-items-center">
+                        <a href="" class="explore-link btn btn-light btn-lg text-uppercase rounded-pill px-4 py-2">Shop Now</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Right Image -->
-            <div class="col-12 col-md-4">
-                <img src="{% static 'images/rightimage.webp' %}" alt="Right Image" class="img-fluid rounded shadow">
+            <!-- Middle Text Box with New Styling -->
+            <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
+                <div class="highlight-box text-center p-4 shadow-lg rounded">
+                    <h2 class="display-4 font-weight-bold">Elegance, Redefined</h2>
+                    <p class="lead">Dive into our curated selection of timeless pearls and sophisticated jewelry pieces that enhance any look. Each item is designed to add a touch of grace and refinement to your style.</p>
+                    <a href="" class="btn btn-dark rounded-pill px-5 py-2 mt-4">Explore the Collection</a>
+                </div>
             </div>
+
         </div>
     </div>
 </section>
+
+
 <!-- Shop by Category Section -->
 <div class="pearl-bg-wrapper">
     <div class="pearl-bg">
