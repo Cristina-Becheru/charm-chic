@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['charm-chic.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['charm-chic-aed25148762b.herokuapp.com', 'localhost']
 
 
 # Application definition
