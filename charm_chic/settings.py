@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = os.environ.get('DEVELOPMENT') == 'True'
 
 
-ALLOWED_HOSTS = ['charm-chic-aed25148762b.herokuapp.com', 'localhost', 'localhost:8001']
+ALLOWED_HOSTS = ['charm-chic-aed25148762b.herokuapp.com', 'localhost', 'localhost:8001', 'testserver']
 
 
 # Application definition
