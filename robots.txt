@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Disallow: /profiles/
+Disallow: /checkout/
+Disallow: /admin/
+Sitemap: https://charm-chic-aed25148762b.herokuapp.com/sitemap.xml
