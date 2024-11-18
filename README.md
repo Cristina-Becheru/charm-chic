@@ -54,7 +54,6 @@ GITHUB PAGES
     - [Typography](#typography)
   - [Marketing](#marketing)
     - [E-commerce Business Model](#e-commerce-business-model)
-    - [Facebook Marketing](#facebook-marketing)
     - [SEO](#seo)
     - [Testing](#testing)
   - [Technologies Used](#technologies-used)
@@ -406,7 +405,7 @@ The collection includes a wide range of pearl jewelry, such as:
 - Rings
 
 Each piece is designed to enhance the wearer’s style with a touch of grace and refinement.
-### Facebook marketing 
+
 ### SEO
 The project incorporates comprehensive SEO enhancements to improve search engine visibility and user reach. 
 
