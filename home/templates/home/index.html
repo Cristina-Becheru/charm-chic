@@ -56,8 +56,6 @@
         </div>
     </div>
 </section>
-
-
 <!-- Shop by Category Section -->
 <div class="pearl-bg-wrapper">
     <div class="pearl-bg">
@@ -78,7 +76,7 @@
                         <img src="{% static 'images/necklacet.webp' %}" alt="Necklaces Hover"
                             class="img-fluid hover-img">
                         <h5 class="category-title">
-                            <a href="" class="category-link">Necklaces</a>
+                            <a href="{% url 'products' %}?subcategory=Necklaces" class="category-link">Necklaces</a>
                         </h5>
                     </div>
                 </div>
@@ -90,7 +88,7 @@
                         <img src="{% static 'images/elegancet.webp' %}" alt="Earrings Hover"
                             class="img-fluid hover-img">
                         <h5 class="category-title">
-                            <a href="" class="category-link">Earrings</a>
+                            <a href="{% url 'products' %}?subcategory=Earrings" class="category-link">Earrings</a>
                         </h5>
                     </div>
                 </div>
@@ -102,7 +100,7 @@
                             class="img-fluid default-img">
                         <img src="{% static 'images/triple.webp' %}" alt="Bracelets Hover" class="img-fluid hover-img">
                         <h5 class="category-title">
-                            <a href="" class="category-link">Bracelets</a>
+                            <a href="{% url 'products' %}?subcategory=Bracelets" class="category-link">Bracelets</a>
                         </h5>
                     </div>
                 </div>
@@ -113,7 +111,7 @@
                         <img src="{% static 'images/fwring.webp' %}" alt="Rings" class="img-fluid default-img">
                         <img src="{% static 'images/grace.webp' %}" alt="Rings Hover" class="img-fluid hover-img">
                         <h5 class="category-title">
-                            <a href="" class="category-link">Rings</a>
+                            <a href="{% url 'products' %}?subcategory=Rings" class="category-link">Rings</a>
                         </h5>
                     </div>
                 </div>
