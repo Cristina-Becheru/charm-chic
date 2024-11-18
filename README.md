@@ -18,6 +18,43 @@ To explore the payment feature, you can use the following test card details (pro
 
 - CVC: Any 3 digits (e.g., 123)
 
+## Table of Contents
+
+- [CharmChic - Pearls Jewelry E-Commerce Project](#charmchic---pearls-jewelry-e-commerce-project)
+  - [Introduction](#introduction)
+  - [User E-commerce Experience](#user-e-commerce-experience)
+    - [Shopper Goals](#shopper-goals)
+    - [Store Owner Goals](#store-owner-goals)
+  - [Website Sections](#website-sections)
+  - [Features](#features)
+    - [Index/Home Page Features](#indexhome-page-features)
+    - [All Products Page Features](#all-products-page-features)
+    - [Product Detail Page Features](#product-detail-page-features)
+    - [About Page Features](#about-page-features)
+    - [Contact Page Features](#contact-page-features)
+    - [Shopping Bag Features](#shopping-bag-features)
+    - [Checkout Page Features](#checkout-page-features)
+    - [Checkout Success Page Features](#checkout-success-page-features)
+    - [Product Management - Add Product](#product-management---add-product)
+    - [Profile Page Features](#profile-page-features)
+    - [Login Page Features](#login-page-features)
+    - [Sign Up Page Features](#sign-up-page-features)
+  - [Future Goals](#future-goals)
+  - [Error Handling](#error-handling)
+  - [Layout](#layout)
+    - [Typography](#typography)
+  - [Marketing](#marketing)
+    - [E-commerce Business Model](#e-commerce-business-model)
+    - [Facebook Marketing](#facebook-marketing)
+    - [SEO](#seo)
+  - [Technologies Used](#technologies-used)
+    - [Languages, Frameworks, Libraries & Programs Used](#languages-frameworks-libraries--programs-used)
+    - [Packages and Dependencies](#packages-and-dependencies)
+    - [External Tools & Programs Used](#external-tools--programs-used)
+  - [Deployment](#deployment)
+  - [Credits](#credits)
+  - [Acknowledgements](#acknowledgements)
+
 ## User E-commerce Experience
 
 ### Shopper Goals
@@ -86,6 +123,21 @@ To explore the payment feature, you can use the following test card details (pro
 8. **Growth and Expansion**
    - Email list building through newsletters creates a direct communication channel with potential and loyal customers.
    - The ability to feature promotions, discounts, and new arrivals increases sales opportunities.
+
+## Website Sections
+
+- **Products**
+- **Index/Home**
+- **About Us**
+- **Contact Page**
+- **Shopping Bag**
+- **Checkout**
+- **Admin - Add/Edit Product Page**
+- **Product Description**
+- **Checkout Success**
+- **Log In**
+- **Sign Up**
+- **Profile**
 
 ## Features
 ### Index/Home Page Features
@@ -240,13 +292,73 @@ To explore the payment feature, you can use the following test card details (pro
 | **Sign Up Button**        | Submits the registration form to create a new user account.                                          |
 | **Responsive Design**     | Ensures the page layout adjusts seamlessly for different screen sizes and devices.                   |
 
+### Future Goals
+
+CharmChic aims to enhance the user experience and expand its features in the future. The planned improvements include:
+
+| **Goal**                                    | **Description**                                                                                         |
+|---------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Wishlist Functionality**                  | Allow users to save their favorite items to a wishlist for later purchase.                              |
+| **Advanced Filtering**                      | Implement more detailed filtering options, such as filtering by price range, material, or occasion.     |
+| **Customer Reviews**                        | Enable customers to leave reviews and ratings on products, helping others make informed decisions.      |
+| **Loyalty Program**                         | Introduce a rewards system where users can earn points for purchases and redeem them for discounts.     |
+| **Enhanced Product Descriptions**           | Add 360-degree views and detailed videos for products to improve visualization and customer confidence.  |
+| **Order Tracking**                          | Provide real-time order tracking for customers to monitor the delivery progress of their purchases.      |
+| **Mobile App Integration**                  | Develop a mobile application for an optimized shopping experience on smartphones and tablets.           |
+| **Personalized Recommendations**            | Use machine learning to suggest products based on customer preferences and purchase history.            |
+| **Multi-language Support**                  | Expand the platform to support multiple languages for a broader customer base.                          |
+| **Expanded Payment Options**                | Add support for alternative payment methods like PayPal, Apple Pay, and Google Pay.                     |
+| **Blog Section**                            | Create a blog section featuring jewelry care tips, style guides, and updates about pearl collections.   |
+| **Live Chat Support**                       | Offer a real-time customer support feature to assist with inquiries instantly.                          |
+| **Wholesale Options**                       | Enable bulk purchase options for businesses or special occasions like weddings.                         |
+| **Gift Cards**                              | Introduce digital gift cards for customers to send as gifts to their loved ones.                        |
+| **Accessibility Improvements**              | Ensure the website meets WCAG standards for accessibility, providing an inclusive shopping experience.   |
+
+### Future Goals
+
+CharmChic aims to enhance the user experience and expand its features in the future. The planned improvements include:
+
+| **Goal**                                    | **Description**                                                                                         |
+|---------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Wishlist Functionality**                  | Allow users to save their favorite items to a wishlist for later purchase.                              |
+| **Advanced Filtering**                      | Implement more detailed filtering options, such as filtering by price range, material, or occasion.     |
+| **Customer Reviews**                        | Enable customers to leave reviews and ratings on products, helping others make informed decisions.      |
+| **Loyalty Program**                         | Introduce a rewards system where users can earn points for purchases and redeem them for discounts.     |
+| **Enhanced Product Descriptions**           | Add 360-degree views and detailed videos for products to improve visualization and customer confidence.  |
+| **Order Tracking**                          | Provide real-time order tracking for customers to monitor the delivery progress of their purchases.      |
+| **Mobile App Integration**                  | Develop a mobile application for an optimized shopping experience on smartphones and tablets.           |
+| **Personalized Recommendations**            | Use machine learning to suggest products based on customer preferences and purchase history.            |
+| **Multi-language Support**                  | Expand the platform to support multiple languages for a broader customer base.                          |
+| **Expanded Payment Options**                | Add support for alternative payment methods like PayPal, Apple Pay, and Google Pay.                     |
+| **Blog Section**                            | Create a blog section featuring jewelry care tips, style guides, and updates about pearl collections.   |
+| **Live Chat Support**                       | Offer a real-time customer support feature to assist with inquiries instantly.                          |
+| **Gift Cards**                              | Introduce digital gift cards for customers to send as gifts to their loved ones.                        |
+
+### Error Handling
+
+To ensure a seamless user experience and provide clear communication during errors, the following measures have been implemented:
+
+- **Custom 404 Page**: Users are redirected to a friendly 404 error page if they attempt to access a non-existent page. This page includes a helpful message and a button to guide them back to the homepage.
+
+- **Custom 500 Page**: For internal server errors, users are shown a custom 500 error page that explains the issue and offers a button to return to the homepage.
+
+- **Database Object Validation**: The `get_object_or_404` function is used to handle cases where a requested database object (e.g., a product) does not exist. This ensures users cannot access or interact with unavailable products and are instead shown a 404 error.
+
+- **Real-Time Toast Notifications**: Toast notifications are used to provide immediate feedback for user actions, such as successfully adding an item to the shopping bag or encountering an error. These notifications appear in the top-right corner of the screen, ensuring users are informed without disrupting their experience.
+
 ## Layout
-
-### Design
-
 ### Typography
-###  Images
-### Colors
+- The Babylonica font was chosen for its elegant and sophisticated style, aligning with the luxurious theme of CharmChic.
+
+It ensures readability and enhances the site's overall aesthetic with clean, modern text presentation across all devices.
+### Colors Used in the Project
+
+The following colors were used throughout the project to create a cohesive and elegant design:
+
+![screenshot](static/images/output.png)
+
+These colors provide a sophisticated and timeless aesthetic, reflecting the elegance of the Charm Chic brand.
+
 ## Marketing
 ### E-commerce Business Model
 Charm Chic operates under a B2C (Business-to-Customer) model, specializing in the sale of luxurious pearl jewelry directly to customers. The platform enables customers to browse, select, and purchase products seamlessly, offering a guest checkout option for quick transactions without requiring registration.
@@ -345,10 +457,50 @@ The following packages and dependencies are used in this project:
 - [ToWebP](https://towebp.io/webp-to-jpg): Used to transform WebP images in bulk back to JPG format when needed.
 - [Pexels](https://towebp.io/webp-to-jpg): Source for video and images featured on the website.
 
-## Deployment
-This project has been deployed to Heroku and is set up for local development using SQLite and PostgreSQL. Below are the steps for deploying and running the project in both environments.
+### Deployment
 
-### Local Development
+This project is deployed using **Heroku**, with **PostgreSQL** as the production database, **Cloudinary** for media file storage, and **SQLite3** for local development.
+
+| **Step**                     | **Details**                                                                                                                                                   |
+|------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Create Heroku App**        | Log in to [Heroku](https://www.heroku.com/), create a new app, and name it uniquely. Choose the region closest to your location.                              |
+| **Add PostgreSQL**           | In the **Resources** tab, search for **Heroku Postgres** and add it to the app to serve as the production database.                                           |
+| **Set Config Vars**          | Go to the **Settings** tab in Heroku and click **Reveal Config Vars**. Add necessary variables:                                                              |
+|                              | - `CLOUDINARY_URL`: Your Cloudinary API URL                                                                                                                  |
+|                              | - `DATABASE_URL`: Automatically added when you attach Heroku Postgres                                                                                       |
+|                              | - `EMAIL_HOST_USER` and `EMAIL_HOST_PASS`: Credentials for email services                                                                                     |
+|                              | - `SECRET_KEY`: Django secret key                                                                                                                            |
+|                              | - `STRIPE_PUBLIC_KEY`, `STRIPE_SECRET_KEY`, `STRIPE_WH_SECRET`: Stripe API credentials                                                                       |
+| **Install Dependencies**     | Ensure the required Python packages are installed:                                                                                                           |
+|                              | ```bash                                                                                                                                                      |
+|                              | pip install gunicorn dj-database-url psycopg2-binary cloudinary django-cloudinary-storage whitenoise                                                         |
+|                              | ```                                                                                                                                                         |
+| **Static Files Configuration** | Use **WhiteNoise** to manage static files:                                                                                                                  |
+|                              | - Add `STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'` to `settings.py`.                                                     |
+|                              | - Configure static and media URLs:                                                                                                                           |
+|                              | ```python                                                                                                                                                    |
+|                              | STATIC_URL = '/static/'                                                                                                                                      |
+|                              | STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')                                                                                                          |
+|                              | MEDIA_URL = '/media/'                                                                                                                                       |
+|                              | ```                                                                                                                                                         |
+| **Create Procfile**          | Add the following to a `Procfile` in the root directory:                                                                                                     |
+|                              | ```                                                                                                                                                         |
+|                              | web: gunicorn your_project_name.wsgi:application                                                                                                             |
+|                              | ```                                                                                                                                                         |
+| **Disable Collectstatic**    | Run `heroku config:set DISABLE_COLLECTSTATIC=1` to avoid deployment errors related to static files.                                                          |
+| **Migrate Database**         | After deploying to Heroku, run `heroku run python manage.py migrate` to apply database migrations.                                                           |
+| **Load Initial Data**        | If you have fixtures for categories or products, load them with:                                                                                            |
+|                              | ```bash                                                                                                                                                      |
+|                              | heroku run python manage.py loaddata categories                                                                                                              |
+|                              | heroku run python manage.py loaddata products                                                                                                                |
+|                              | ```                                                                                                                                                         |
+| **Local Development**        | For local testing, use `SQLite3` as the database. Create a `.env` file with the following variables:                                                         |
+|                              | - `SECRET_KEY`: Your Django secret key                                                                                                                       |
+|                              | - `CLOUDINARY_URL`: Your Cloudinary API URL                                                                                                                  |
+|                              | - `STRIPE_PUBLIC_KEY`, `STRIPE_SECRET_KEY`, `STRIPE_WH_SECRET`: Stripe API credentials                                                                       |
+|                              | - `DATABASE_URL`: Set to `sqlite:///db.sqlite3` for local development.                                                                                       |
+|                              | Run `python manage.py migrate` and `python manage.py runserver` to test the project locally.                                                                 |
+
 
 #### Forking a repository
 - Log in to GitHub.
