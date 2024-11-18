@@ -41,7 +41,7 @@ p {
 }
 
 .nav-link:hover {
-   color:color: #6B7C8A; 
+   color: #6B7C8A; 
 }
 
 /* Header Section */
@@ -108,17 +108,15 @@ p {
 /* Button Styling */
 .btn-dark {
     background-color: #1F2A30;
-    border-color: #1F2A30;
     color: white;
     padding: 10px 20px;
     border-radius: 25px;
 }
 
 .btn-dark:hover {
-    background-color: #36454F; 
-    border-color: #36454F;
-}
+    background-color: #36454F;
 
+}
 
 .logo-font {
     text-transform: uppercase;
@@ -558,7 +556,7 @@ p {
 .allauth-form-inner-content input[type='submit']:hover {	
 	color: #fff;
     background-color: #222;
-    border-color: #222;
+    
 }
 
 .allauth-form-inner-content a {
