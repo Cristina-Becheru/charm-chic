@@ -18,7 +18,75 @@ To explore the payment feature, you can use the following test card details (pro
 
 - CVC: Any 3 digits (e.g., 123)
 
-## User Experience 
+## User E-commerce Experience
+
+### Shopper Goals
+1. **Effortless Product Discovery**
+   - Shoppers can easily browse categories of jewelry such as necklaces, earrings, bracelets, and rings to find items matching their preferences.
+   - Shoppers can search for specific products and sort them by price, popularity, or new arrivals for a more targeted shopping experience.
+   - A responsive design ensures smooth navigation across desktop, tablet, and mobile devices.
+
+2. **Comprehensive Product Details**
+   - Detailed product descriptions, including high-quality images, materials, pricing, and available sizes, help shoppers make informed purchasing decisions.
+   - Related products and recommendations provide inspiration for additional purchases.
+
+3. **Convenient Shopping Bag**
+   - Shoppers can add items to their shopping bag, adjust quantities, or remove items before proceeding to checkout.
+   - A clear breakdown of costs, including subtotals, delivery charges, and grand totals, ensures transparency.
+   - Automatic calculation of free delivery thresholds encourages larger purchases.
+
+4. **Secure and Hassle-Free Checkout**
+   - Shoppers can securely enter their billing and delivery information and choose from multiple payment options, including Stripe.
+   - Email confirmations and detailed order summaries provide peace of mind after completing purchases.
+   - Guest checkout is available for customers who do not wish to register.
+
+5. **Profile and Order History**
+   - Registered shoppers can access a personalized profile page to manage delivery information and view order history.
+   - The ability to save delivery details streamlines the checkout process for future orders.
+
+6. **Support and Communication**
+   - Shoppers can use the contact form to send inquiries and receive prompt responses from the store owner.
+   - A newsletter subscription keeps shoppers updated about promotions, new arrivals, and exclusive offers.
+
+7. **Trust and Transparency**
+   - Easy access to the store's Terms and Conditions, Privacy Policy, and Return Policy ensures a secure and transparent shopping experience.
+   - Visible customer reviews and ratings build trust in product quality and service reliability.
+
+---
+
+### Store Owner Goals
+1. **Efficient Product Management**
+   - The store owner can add, edit, or delete products in the catalog to keep the inventory accurate and up to date.
+   - High-quality images and detailed product descriptions attract and inform potential customers.
+
+2. **Order Management**
+   - The store owner can view and manage orders efficiently to ensure timely delivery and customer satisfaction.
+   - Email notifications for each new order allow prompt processing.
+
+3. **Customer Engagement**
+   - Social media links and newsletters enable the store owner to connect with customers and build a loyal customer base.
+   - Prompt responses to customer inquiries via the contact form enhance customer satisfaction and trust.
+
+4. **Business Insights**
+   - Sales trends and popular product data help the store owner make informed decisions about inventory and promotions.
+   - The ability to view customer order patterns assists in creating targeted marketing campaigns.
+
+5. **Smooth Checkout Experience**
+   - A secure and reliable Stripe payment gateway ensures smooth transaction processing for both customers and the business.
+   - The ability to display and adjust shipping costs provides flexibility for different regions or promotions.
+
+6. **Website Maintenance**
+   - A visually appealing, responsive, and easy-to-navigate website ensures a seamless shopping experience for users on all devices.
+   - Regular updates and announcements help maintain a professional and engaging platform.
+
+7. **Building Brand Identity**
+   - Showcasing unique, handcrafted products highlights the brand's quality and originality.
+   - Sharing the store’s story and values on the About Us page creates a personal connection with customers.
+
+8. **Growth and Expansion**
+   - Email list building through newsletters creates a direct communication channel with potential and loyal customers.
+   - The ability to feature promotions, discounts, and new arrivals increases sales opportunities.
+
 ## Features
 ### Index/Home Page Features
 
@@ -81,7 +149,7 @@ To explore the payment feature, you can use the following test card details (pro
 | **Back to Shop Button** | A button that redirects users back to the products page for further browsing.                       |
 | **Interactive Layout**  | A centered card-style layout with a clean and organized appearance for an easy user experience.      |
 | **CSRF Protection**     | Ensures secure form submission with CSRF tokens included in the form.                               |
-### Contact Page Features
+### Shopping Bag Features
 | **Feature**             | **Description**                                                                                     |
 |-------------------------|-----------------------------------------------------------------------------------------------------|
 | **Page Header**         | Displays the title "Shopping Bag" to help users identify the page.                                 |
@@ -231,26 +299,24 @@ The robots.txt file is configured to guide search engine crawlers on which parts
 ## Technologies used
 
 ### Languages, Frameworks, Libraries & Programs Used
-Python: Used as the core programming language for backend development, server-side logic, and database interactions.
-Django: A powerful Python-based web framework used to build the backend and manage server-side functionality.
-SQLite3: A lightweight, file-based database used for local development and testing.
-Stripe: Integrated for secure payment processing and simulated transactions.
-Crispy Forms: Used to enhance the usability and styling of Django forms.
-PostgreSQL: A robust and scalable database solution used in the production environment.
-HTML & CSS: Used for structuring and styling the website.
-Bootstrap: Utilized for creating responsive, mobile-friendly, and visually appealing layouts.
-jQuery: Integrated for handling interactivity, event handling, and DOM manipulation.
-Cloudinary: A cloud-based solution for managing, optimizing, and delivering media assets.
-Git: Used for version control and collaboration among developers.
-Heroku: A cloud platform used for deploying and hosting the website.
-Google Fonts: Incorporated for elegant typography and improving the site's design aesthetics.
-W3C Markup Validator: Used to ensure the validity and standards compliance of the HTML code.
-W3C CSS Validator: Employed to validate CSS code for correctness and best practices adherence.
-Am I Responsive?: Used to visualize and confirm the website’s responsiveness on multiple devices.
-Lighthouse: A tool used for auditing and optimizing performance, accessibility, SEO, and best practices.
-Lucid: Used to create and visualize database models and workflows during the planning phase.
-VS Code: The integrated development environment (IDE) used for coding, debugging, and project management.
-ChatGPT: Utilized for generating content, refining project details, and brainstorming improvements.
+- Python: Used as the core programming language for backend development, server-side logic, and database interactions.
+- Django: A powerful Python-based web framework used to build the backend and manage server-side functionality.
+- SQLite3: A lightweight, file-based database used for local development and testing.
+- Stripe: Integrated for secure payment processing and simulated transactions.
+- Crispy Forms: Used to enhance the usability and styling of Django forms.
+- PostgreSQL: A robust and scalable database solution used in the production environment.
+- HTML & CSS: Used for structuring and styling the website.
+- Bootstrap: Utilized for creating responsive, mobile-friendly, and visually appealing layouts.
+- jQuery: Integrated for handling interactivity, event handling, and DOM manipulation.
+- Cloudinary: A cloud-based solution for managing, optimizing, and delivering media assets.
+- Git: Used for version control and collaboration among developers.
+- Heroku: A cloud platform used for deploying and hosting the website.
+- Google Fonts: Incorporated for elegant typography and improving the site's design aesthetics.
+- W3C Markup Validator: Used to ensure the validity and standards compliance of the HTML code.
+- W3C CSS Validator: Employed to validate CSS code for correctness and best practices adherence.
+- Lighthouse: A tool used for auditing and optimizing performance, accessibility, SEO, and best practices.
+- VS Code: The integrated development environment (IDE) used for coding, debugging, and project management.
+- ChatGPT: Utilized for generating content, refining project details, and brainstorming improvements.
 
 ## Packages and Dependencies 
 The following packages and dependencies are used in this project:
