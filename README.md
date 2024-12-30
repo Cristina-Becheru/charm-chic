@@ -54,6 +54,7 @@ GITHUB PAGES
     - [Typography](#typography)
   - [Marketing](#marketing)
     - [E-commerce Business Model](#e-commerce-business-model)
+    - [Facebook Marketing](#facebook-marketing)
     - [SEO](#seo)
     - [Testing](#testing)
   - [Technologies Used](#technologies-used)
