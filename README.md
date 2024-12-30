@@ -257,7 +257,7 @@ GITHUB PAGES
 
 | **Feature**               | **Description**                                                                                     |
 |---------------------------|-----------------------------------------------------------------------------------------------------|
-| **Page Header**           | Displays the title "Add Product" to indicate the user is on the product management page.            |
+| **Page Header**           | Displays the title "Add Product" to indicate the admin is on the product management page.            |
 | **Form for Adding Products** | Allows admin users to fill out a form to add a new product to the database.                       |
 | **Rating Guide**          | Includes a tooltip guide explaining the product rating system (1 to 5 stars).                       |
 | **Image Upload**          | Provides an input field for uploading a product image, with a preview of the filename upon selection.|
@@ -405,6 +405,10 @@ The collection includes a wide range of pearl jewelry, such as:
 - Rings
 
 Each piece is designed to enhance the wearer’s style with a touch of grace and refinement.
+### Facebook Marketing
+A facebook business page for CharmChic has been created to showcase our jewelry pearl collections. The page allows us to engage with customers, promote new products, and share special offers.
+
+![facebook page](static/images/facebook.webp)
 
 ### SEO
 The project incorporates comprehensive SEO enhancements to improve search engine visibility and user reach. 

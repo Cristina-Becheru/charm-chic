@@ -35,11 +35,11 @@ def contact(request):
                 subject,
                 email_message,
                 settings.DEFAULT_FROM_EMAIL,
-                [settings.CONTACT_EMAIL],  # Replace with the admin's email address
+                [settings.CONTACT_EMAIL],  
                 fail_silently=False,
             )
             messages.success(request, "Your message has been sent successfully!")
-            return redirect('contact_confirmation')  # Ensure this matches the URL name in `urls.py`
+            return redirect('contact_confirmation')  
         except Exception as e:
             messages.error(request, "An error occurred while sending your message. Please try again later.")
             return redirect('contact')
