@@ -2,6 +2,7 @@ from django import forms
 from .widgets import CustomClearableFileInput
 from .models import Product, Category, Review
 
+
 class ProductForm(forms.ModelForm):
 
     class Meta:
@@ -29,3 +30,4 @@ class ReviewForm(forms.ModelForm):
         if not (1 <= rating <= 5):
             raise forms.ValidationError("Invalid rating value")
         return rating
+    

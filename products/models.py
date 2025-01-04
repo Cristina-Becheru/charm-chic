@@ -72,3 +72,30 @@ class Review(models.Model):
 
     def __str__(self):
         return f"Review for {self.product.name} by {self.user.username}"
+    
+class JewelryCustomization(models.Model):
+    MATERIAL_CHOICES = [
+        ('gold', 'Gold'),
+        ('silver', 'Silver'),
+        ('platinum', 'Platinum'),
+    ]
+
+    GEMSTONE_CHOICES = [
+        ('diamond', 'Diamond'),
+        ('ruby', 'Ruby'),
+        ('sapphire', 'Sapphire'),
+        ('emerald', 'Emerald'),
+        ('pearl', 'Pearl'),
+    ]
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='customizations')
+    jewelry_item = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='customizations')  # Assuming you have a 'Product' model
+    material = models.CharField(max_length=20, choices=MATERIAL_CHOICES, default='gold')
+    gemstone = models.CharField(max_length=20, choices=GEMSTONE_CHOICES, default='diamond', blank=True, null=True)
+    engraving_text = models.CharField(max_length=255, blank=True, null=True)
+    size = models.CharField(max_length=10)  # Could be 'Small', 'Medium', 'Large', or numeric size like ring sizes
+    price = models.DecimalField(max_digits=10, decimal_places=2)  # Custom price depending on customization
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Customization for {self.jewelry_item.name} by {self.user.username}"

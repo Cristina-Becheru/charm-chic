@@ -182,18 +182,20 @@ GITHUB PAGES
 
 
 ### Product Detail Page Features
-| **Feature**              | **Description**                                                                                     |
-|--------------------------|-----------------------------------------------------------------------------------------------------|
-| **Nav Bar**              | A fully responsive navigation bar allows users to navigate the site, view their shopping bag total, and search for specific products. |
-| **Product Image**        | Displays the main image of the product. Clicking on the image opens a larger view in a new tab.      |
-| **Product Details**      | Displays the product name, price, description, and category/subcategory if applicable.               |
-| **Product Rating**       | Shows a star-based rating for the product, or "No Rating" if unavailable.                           |
-| **Edit and Delete Buttons** | Allows admin users to edit or delete the product directly from the page.                           |
-| **Size Selector**        | Provides a dropdown menu for selecting the product size if size options are available.               |
-| **Quantity Selector**    | Includes buttons to increase or decrease the quantity, and an input field for setting a specific quantity. |
-| **Add to Bag Button**    | Adds the selected product with chosen size and quantity to the shopping bag.                        |
-| **Keep Shopping Button** | Redirects the user back to the products page to continue browsing.                                   |
-| **Back to Product List** | A hidden form input captures the current page URL for redirecting users back to the product list after adding items to the bag. |
+| **Feature**               | **Description**                                                                                     |
+|---------------------------|-----------------------------------------------------------------------------------------------------|
+| **Nav Bar**               | A fully responsive navigation bar allows users to navigate the site, view their shopping bag total, and search for specific products. |
+| **Product Image**         | Displays the main image of the product. Clicking on the image opens a larger view in a new tab.      |
+| **Product Details**       | Displays the product name, price, description, and category/subcategory if applicable.               |
+| **Product Rating**        | Shows a star-based rating for the product, or "No Rating" if unavailable.                           |
+| **Customer Reviews**      | Displays reviews submitted by customers, including their rating and comment on the product.         |
+| **Average Rating**        | Displays the average rating from all reviews, calculated as the mean of all customer ratings. This is often shown in stars. |
+| **Edit and Delete Buttons (Admin Only)** | Allows admin users to edit or delete the product directly from the page. |
+| **Size Selector**         | Provides a dropdown menu for selecting the product size if size options are available (e.g., for rings, necklaces, or bracelets). |
+| **Quantity Selector**     | Includes buttons to increase or decrease the quantity, and an input field for setting a specific quantity. |
+| **Add to Bag Button**     | Adds the selected product with chosen size and quantity to the shopping bag.                        |
+| **Keep Shopping Button**  | Redirects the user back to the products page to continue browsing.                                   |
+| **Back to Product List**  | A hidden form input captures the current page URL for redirecting users back to the product list after adding items to the bag. |
 
 ### About Page Features
 | **Feature**             | **Description**                                                                                     |
