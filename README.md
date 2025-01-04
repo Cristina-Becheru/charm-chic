@@ -44,6 +44,7 @@ GITHUB PAGES
     - [Shopping Bag Features](#shopping-bag-features)
     - [Checkout Page Features](#checkout-page-features)
     - [Checkout Success Page Features](#checkout-success-page-features)
+    - [Order Confirmation Email](#order-confirmation-email)
     - [Product Management - Add Product](#product-management---add-product)
     - [Profile Page Features](#profile-page-features)
     - [Login Page Features](#login-page-features)
@@ -56,6 +57,7 @@ GITHUB PAGES
     - [E-commerce Business Model](#e-commerce-business-model)
     - [Facebook Marketing](#facebook-marketing)
     - [SEO](#seo)
+    - [User Stories](#user-stories)
     - [Testing](#testing)
   - [Technologies Used](#technologies-used)
     - [Languages, Frameworks, Libraries & Programs Used](#languages-frameworks-libraries--programs-used)
@@ -254,6 +256,10 @@ GITHUB PAGES
 | **Navigation Buttons**    | Includes buttons for navigating back to the profile page (if accessed from there) or exploring new arrivals. |
 | **Responsive Design**     | Ensures the layout adjusts seamlessly for different screen sizes and devices.                       |
 
+
+### Order Confirmation Email
+![order confirmation ](static/images/confirmation.png)
+
 ### Product Management - Add Product
 
 | **Feature**               | **Description**                                                                                     |
@@ -435,6 +441,17 @@ A dynamically generated sitemap.xml file ensures that all pages are indexed effi
 
 **Robots.txt**:
 The robots.txt file is configured to guide search engine crawlers on which parts of the website should or should not be indexed, ensuring focus on relevant content.
+
+### User Stories
+This project was developed following Agile Methodology using GitHub. A total of 23 user stories were created as GitHub issues to outline the required features and functionalities.
+
+Each user story includes:
+
+- A clear description of the feature or functionality from the user's perspective.
+
+- Acceptance criteria to define when the feature is complete.
+
+![user stories](static/images/userstories.png)
 
 ## Testing
 The site was thoroughly tested during development, with immediate fixes applied to resolve any issues.
