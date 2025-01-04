@@ -207,23 +207,6 @@ def add_review(request, product_id):
 
     return redirect('product_detail', product_id=product.id)
 
-def submit_review(request, product_id):
-    product = Product.objects.get(id=product_id)
-    if request.method == 'POST':
-        form = ReviewForm(request.POST)
-        if form.is_valid():
-            review = form.save(commit=False)
-            review.user = request.user  # Assign the logged-in user
-            review.product = product
-            review.save()
-            messages.success(request, "Review submitted successfully!")
-        else:
-            messages.error(request, "There was an error with your submission.")
-    else:
-        form = ReviewForm()
-
-    return render(request, 'product_detail.html', {'form': form, 'product': product})
-
                
 def delete_review(request, review_id):
     # Ensure the review exists
