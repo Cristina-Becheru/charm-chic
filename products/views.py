@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from .models import Product, Category, SubCategory, Tag
+from .models import Product, Category, SubCategory, Tag, Review
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
-from .forms import ProductForm
+from .forms import ProductForm, ReviewForm
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
@@ -75,6 +75,9 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     
+    reviews = Review.objects.filter(product=product)
+    star_range = range(1, 6)
+    
      # Define size options based on subcategory name
     if product.subcategory and product.subcategory.name == 'Rings':
         size_options = ['Size 5', 'Size 6', 'Size 7', 'Size 8']
@@ -96,6 +99,8 @@ def product_detail(request, product_id):
         'product': product,
         'size_options': size_options,
         'size_label': size_label,
+        'reviews': reviews, 
+        'star_range': star_range,
         }
 
     return render(request, 'products/product_detail.html', context)
@@ -172,3 +177,60 @@ def delete_product(request, product_id):
     return redirect(reverse('products'))
     
     
+@login_required
+def add_review(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            rating = form.cleaned_data['rating']
+            comment = form.cleaned_data['comment']
+
+            # Check if the user has already reviewed this product
+            if Review.objects.filter(product=product, user=request.user).exists():
+                messages.error(request, "You've already reviewed this product.")
+                return redirect('product_detail', product_id=product.id)
+
+            try:
+                review = form.save(commit=False)
+                review.product = product
+                review.user = request.user
+                review.save()
+                messages.success(request, 'Thank you for your review!')
+            except Exception as e:
+                messages.error(request, f"An error occurred: {e}")
+                return redirect('product_detail', product_id=product.id)
+        else:
+            print(form.errors)  
+            messages.error(request, 'Both rating and comment are required.')
+
+    return redirect('product_detail', product_id=product.id)
+
+def submit_review(request, product_id):
+    product = Product.objects.get(id=product_id)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user  # Assign the logged-in user
+            review.product = product
+            review.save()
+            messages.success(request, "Review submitted successfully!")
+        else:
+            messages.error(request, "There was an error with your submission.")
+    else:
+        form = ReviewForm()
+
+    return render(request, 'product_detail.html', {'form': form, 'product': product})
+
+               
+def delete_review(request, review_id):
+    # Ensure the review exists
+    review = get_object_or_404(Review, id=review_id)
+    
+    # Only allow admins to delete reviews
+    if request.user.is_staff:
+        review.delete()
+    
+    return redirect('product_detail', product_id=review.product.id)

@@ -10,7 +10,8 @@
      - [Navigation Bar Testing](#navigation-bar-testing)
      - [Toast Notifications Testing](#toast-notifications-testing)
      - [Key Feature Testing](#key-feature-testing)
-3. [Lighthouse Testing](#lighthouse-testing)
+3. [User Stories Testing](#user-stories-testing)
+4. [Lighthouse Testing](#lighthouse-testing)
 
 ---
 
@@ -244,6 +245,44 @@ Toasts were tested to ensure users receive clear feedback on actions taken throu
 | Admin product management | Admin users can add, edit, and delete products. | Tested by adding, editing, and deleting products. | Admin features worked as expected. | No fix needed. |
 | Instant updates | Changes should reflect instantly on the products page. | Tested by viewing the products page after changes. | Changes were reflected instantly. | No fix needed. |
 
+## User Stories Testing
+### **Customer Stories**
+
+| **User Story** | **Test** | **Result** | **Fix** |
+|----------------|----------|------------|---------|
+| **View List of Pearl Jewelry** | I have verified that a list of pearl jewelry items is displayed on the product page. | Pearl jewelry items appear and are accurately listed. | No fix needed. |
+| **View Detailed Information about a Specific Product** | I have verified that clicking on a jewelry item redirects to the product detail page with all relevant information (e.g., size, color, price). | Product details such as size, color, and price display correctly. | No fix needed. |
+| **Filter Jewelry by Type and Color** | I have verified that the filtering options for jewelry type and pearl color function correctly, and products are displayed according to the selected filters. | Filtering options display accurate results based on the selected criteria. | No fix needed. |
+| **View Trending Jewelry** | I have verified that trending jewelry items are displayed on the homepage or a designated section, showing best sellers and new arrivals. | Trending items are visible and updated accordingly. | No fix needed. |
+| **View Total of Purchases** | I have verified that the shopping bag page displays the correct subtotal, taxes, and total price. | Total cost and details are correctly calculated and displayed. | No fix needed. |
+| **Register for an Account** | I have verified that the registration page accepts all required information and creates an account. | Account creation works successfully, and data is saved securely. | No fix needed. |
+| **Log In/Log Out of Account** | I have verified that users can log in and log out with valid credentials. | Login and logout functionality works as expected. | No fix needed. |
+| **Recover Password** | I have verified that the password recovery process works as intended, and users can recover their password through email. | User receives password recovery instructions via email. | No fix needed. |
+| **Manage User Profile** | I have verified that user profile information can be updated and saved successfully. | User profile is personalized and updated correctly. | No fix needed. |
+| **Sort Products** | I have verified that sorting options (price, name) work and reorder the product list accordingly. | Products are sorted based on selected criteria. | No fix needed. |
+| **Search for Products** | I have verified that the search bar returns relevant results based on product name or description. | Search results are relevant to the input query. | No fix needed. |
+| **Show Search Results** | I have verified that search results display the total count and searched term. | Search results are clearly displayed with a count of items. | No fix needed. |
+| **Select Product Quantity** | I have verified that the quantity input field allows for easy selection and updates correctly. | Quantity is updated based on user input. | No fix needed. |
+| **View Products in a Category** | I have verified that clicking on a category filter shows products from the selected category. | Correct category products are displayed. | No fix needed. |
+| **Contact Support** | I have verified that the contact page is accessible and contains correct contact details. | Contact information is available and works as expected. | No fix needed. |
+| **View Policies** | I have verified that links to policy pages are functional and accessible. | Policy pages are linked and display relevant information. | No fix needed. |
+| **Subscribe to Newsletter** | I have verified that the subscription form is functional and users can successfully subscribe. | Subscription process works successfully. | No fix needed. |
+| **Find Social Media Links** | I have verified that social media links are available in the footer and work correctly. | Social media links are visible and functional. | No fix needed. |
+
+### **Admin Stories**
+
+| **User Story** | **Test** | **Result** | **Fix** |
+|----------------|----------|------------|---------|
+| **Add New Products** | I have verified that the admin can add products through the product management interface. | New products are added and display correctly on the site. | No fix needed. |
+| **Edit or Delete Products** | I have verified that admins can edit and delete product details. | Product details are updated or deleted as expected. | No fix needed. |
+
+### **Security and Payment**
+
+| **User Story** | **Test** | **Result** | **Fix** |
+|----------------|----------|------------|---------|
+| **Handle Personal and Payment Information Securely** | I have verified that secure payment processing (e.g., Stripe) is integrated and functioning. | Payment is processed securely. | No fix needed. |
+| **Provide Shipping and Payment Information** | I have verified that the checkout form accepts correct details and handles errors for missing information. | Form submissions work without errors. | No fix needed. |
+| **Receive Order Confirmation** | I have verified that an order confirmation page is displayed with accurate details after completing an order. | Confirmation page displays correct order information. | No fix needed. |
 
 
 ## Lighthouse Testing
